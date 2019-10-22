@@ -1,13 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './Containers/Nav';
 
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<h1>F1 Stats</h1>
-			</header>
+			<Nav/>
 		</div>
 	);
 }
