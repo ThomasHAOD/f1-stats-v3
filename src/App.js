@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Nav from './Containers/Nav';
 import OptionsContainer from './Containers/OptionsContainer';
 import StatsContainer from './Containers/StatsContainer';
