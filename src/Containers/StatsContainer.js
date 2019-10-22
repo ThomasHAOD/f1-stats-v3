@@ -7,7 +7,6 @@ export default class StatsContainer extends Component {
     return (
       <div className="stats-container">
         <header className="dropdowns">
-          <h1>Dropdowns</h1>
           <DropdownButton
             id="dropdown-basic-button"
             title="Dropdown button"
@@ -30,7 +29,7 @@ export default class StatsContainer extends Component {
         </header>
         <div className="text-stats">
           <h1>Text stats</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa placerat duis ultricies lacus sed turpis tincidunt. Ut pharetra sit amet aliquam. Leo vel orci porta non pulvinar. Sem et tortor consequat id porta. Ut tellus elementum sagittis vitae et leo duis. Aliquam ut porttitor leo a diam sollicitudin. Faucibus vitae aliquet nec ullamcorper. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. A diam maecenas sed enim ut sem viverra. Tortor at risus viverra adipiscing at in tellus integer. Sit amet facilisis magna etiam. Nisl nisi scelerisque eu ultrices vitae auctor eu augue. Id semper risus in hendrerit gravida rutrum quisque non tellus. Sit amet consectetur adipiscing elit pellentesque. Gravida in fermentum et sollicitudin ac orci. Scelerisque purus semper eget duis at. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim.
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa placerat duis ultricies lacus sed turpis tincidunt. Ut pharetra sit amet aliquam. Leo vel orci porta non pulvinar. Sem et tortor consequat id porta. Ut tellus elementum sagittis vitae et leo duis. Aliquam ut porttitor leo a diam sollicitudin. Faucibus vitae aliquet nec ullamcorper. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. A diam maecenas sed enim ut sem viverra. Tortor at risus viverra adipiscing at in tellus integer. Sit amet facilisis magna etiam. Nisl nisi scelerisque eu ultrices vitae auctor eu augue. Id semper risus in hendrerit gravida rutrum quisque non tellus. Sit amet consectetur adipiscing elit pellentesque. Gravida in fermentum et sollicitudin ac orci. 
 
 </p>
         </div>
