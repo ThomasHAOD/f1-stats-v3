@@ -5,7 +5,7 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="navbar">
-        <h1>F1 Stats</h1>
+        <h1>F1 Stats Console</h1>
 
         <ToggleButtonGroup toggle className="nav-buttons" vertical name="navbar">
           <ToggleButton type="radio" name="radio" defaultChecked value="1" variant="info">
