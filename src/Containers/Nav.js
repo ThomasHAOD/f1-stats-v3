@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button, { ButtonGroup, ToggleButton } from "react-bootstrap";
+import Button, { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 
 export default class Nav extends Component {
   render() {
@@ -7,20 +7,20 @@ export default class Nav extends Component {
       <div className="navbar">
         <h1>F1 Stats</h1>
 
-        <ButtonGroup toggle className="mt-3" vertical>
-          <ToggleButton type="radio" name="radio" defaultChecked value="1">
+        <ToggleButtonGroup toggle className="nav-buttons" vertical name="navbar">
+          <ToggleButton type="radio" name="radio" defaultChecked value="1" variant="success">
             Driver Stats
           </ToggleButton>
-          <ToggleButton type="radio" name="radio" value="2">
+          <ToggleButton type="radio" name="radio" value="2" variant="success">
             Compare Drivers
           </ToggleButton>
-          <ToggleButton type="radio" name="radio" value="3">
+          <ToggleButton type="radio" name="radio" value="3" variant="success">
             Track Stats
           </ToggleButton>
-          <ToggleButton type="radio" name="radio" value="3">
+          <ToggleButton type="radio" name="radio" value="4" variant="success">
             Constructor Stats
           </ToggleButton>
-        </ButtonGroup>
+        </ToggleButtonGroup>
       </div>
     );
   }

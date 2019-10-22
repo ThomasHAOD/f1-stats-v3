@@ -2,7 +2,8 @@
   text-align: center;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
-  height: 1vh;
+  grid-template-rows: repeat(3, 1fr);
+  /* max-height: 1vh; */
 }
 
 .App-link {
@@ -11,11 +12,38 @@
 
 .navbar {
   grid-column: 1 / span 4;
-  width: 100%;
+  grid-row: 1 / span 1;
+  width: auto;
   display: inline;
   align-content: center;
   text-align: center;
   align-items: center;
   background: lightgrey;
+  margin: 10px;
+}
+
+.options-container {
+  grid-column: 1 / span 4;
+  grid-row: 2 / span 2;
+  width: auto;
+  height: auto;
+  display: inline;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  background: lightgray;
+  margin: 10px;
+}
+
+.stats-container{
+  grid-column: 5 / span 12;
+  grid-row: 1 / span 3;
+  width: 100%;
+  height: auto;
+  display: inline;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  background: lightblue;
   margin: 10px;
 }
