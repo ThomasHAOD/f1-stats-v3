@@ -82,6 +82,10 @@ $color5: rgba(100, 182, 172, 1);
     overflow: auto;
   }
 
+  .options-container{
+    overflow: auto;
+  }
+
   .icon-container {
     display: none;
   }
@@ -108,6 +112,7 @@ $color5: rgba(100, 182, 172, 1);
     grid-column: 1 / span 4;
     grid-row: 2 / span 2;
     min-width: 200px;
+    max-height: 66.666vh;
     display: inline;
     align-content: center;
     text-align: center;

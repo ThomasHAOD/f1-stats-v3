@@ -9,28 +9,41 @@ export default class OptionsContainer extends Component {
     return (
       <div className="options-container">
           <br/>
+        <h3>Include Retirements</h3><CheckBox/>
+        <br/>
         <h3>Include Wet Races</h3><CheckBox/>
         <br/>
-        <CheckBox/>
-        <br/>
-        <CheckBox/>
+        <h3>Include Dry Races</h3><CheckBox/>
         <br/>
 
-        <CheckBox/>
         
-
-        <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="info">
+        
+        <DropdownButton id="dropdown-basic-button" title="Select Track Type" variant="info">
+          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        </DropdownButton>
+        <DropdownButton id="dropdown-basic-button" title="Select Track" variant="info">
           <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
           <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
         </DropdownButton>
 
-        <DropdownButton id="dropdown-basic-button" title="Dropdown button" variant="info">
+        <DropdownButton id="dropdown-basic-button" title="Select Constructor" variant="info">
           <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
           <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
         </DropdownButton>
+        <DropdownButton id="dropdown-basic-button" title="Select Year" variant="info">
+          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        </DropdownButton>
+        
+        <h3>Comparison Mode</h3><CheckBox/>
       </div>
     );
   }
+  
+  
 }

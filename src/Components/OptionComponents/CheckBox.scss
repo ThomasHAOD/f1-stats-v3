@@ -5,28 +5,28 @@
   .checker {
     display: inline-block;
     font-size: 20vmin;
-    height: .2em;
-    width: .5em;
+    height: 20px;
+    width: 50px;
     box-sizing: content-box;
-    padding: 0.030em;
-    border-radius: 0.05em;
+    padding: 3px;
+    border-radius: 5px;
     transition: transform var(--duration) ease;
     cursor: pointer;
   }
   
   .checkmark {
-    width: 0.2em;
-    height: 0.2em;
+    width: 20px;
+    height: 20px;
     transition: transform var(--duration) ease;
-    transform: translateX(-.08em);
+    transform: translateX(-8px);
   
     z-index: 5;
   
     svg {
       display: block;
       background: #e5e5e5;
-      transform: translateX(.08em);
-      border-radius: 0.03em;
+      transform: translateX(8px);
+      border-radius: 3px;
   
       transition: 
         background-color var(--duration) ease,
@@ -51,11 +51,11 @@
   
     &:checked {
       ~ .checkmark {
-        transform: translate(0.38em);
+        transform: translate(38px);
   
         svg {
           background: rgba(178, 23, 23, 1);
-          transform: translate(-.08em);
+          transform: translate(-8px);
           path { stroke-dashoffset: 0; }
         }
       }
@@ -92,7 +92,7 @@
       transform: translateY(30%);
       transform-origin: bottom center;
       background: black;
-      filter: blur(.05em);
+      filter: blur(5px);
       opacity: 0.2;
       z-index: -1;
     }
