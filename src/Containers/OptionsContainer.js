@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from 'react-bootstrap/Dropdown'
-import CheckBox from '../Components/CheckBox'
+import CheckBox from '../Components/OptionComponents/CheckBox'
 
 
 export default class OptionsContainer extends Component {
@@ -9,9 +9,13 @@ export default class OptionsContainer extends Component {
     return (
       <div className="options-container">
           <br/>
+        <h3>Include Wet Races</h3><CheckBox/>
+        <br/>
         <CheckBox/>
+        <br/>
         <CheckBox/>
-        <CheckBox/>
+        <br/>
+
         <CheckBox/>
         
 
