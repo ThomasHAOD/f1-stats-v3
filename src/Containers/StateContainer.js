@@ -10,13 +10,14 @@ export default class StateContainer extends Component {
         super(props)
     
         this.state = {
-             navSelected: ''
+             statsShown: 'home'
         }
-        this.handleNavChange = this.handleNavChange.bind(this)
+        this.handleStatsShownChange = this.handleStatsShownChange.bind(this)
     }
 
-    handleNavChange(event){
-        this.setState({navSelected: event.target.value})
+    handleStatsShownChange(event){
+        this.setState({statsShown: event.target.value})
+        console.log(this.state.statsShown)
     }    
     
 
@@ -25,7 +26,7 @@ export default class StateContainer extends Component {
       <div className="App">
         <MobileHeader />
         <div className="grid-container">
-          <Nav handleNavChange={this.handleNavChange}/>
+          <Nav handleStatsShownChange={this.handleStatsShownChange}/>
           <OptionsContainer />
           <StatsContainer />
         </div>
