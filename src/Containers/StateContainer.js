@@ -23,7 +23,11 @@ export default class StateContainer extends Component {
       <div className="App">
         <MobileHeader />
         <div className="grid-container">
-          <Nav />
+          <Nav 
+            driverStatsSelected={driverStatsSelected}
+            compareDriverSelected={compareDriverSelected}
+            trackStatsSelected={trackStatsSelected}
+            constructorStatsSelected={constructorStatsSelected}/>
           <OptionsContainer />
           <StatsContainer />
         </div>
