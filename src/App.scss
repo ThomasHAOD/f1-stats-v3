@@ -15,6 +15,12 @@ $color5: rgba(100, 182, 172, 1);
   font-family: "Abel", sans-serif;
   width: 100vw;
   text-align: center;
+  background: $color2;
+}
+
+h3{
+  font-size: 20px;
+  grid-column: 1 / span 2;
 }
 
 .grid-container {
@@ -113,12 +119,17 @@ $color5: rgba(100, 182, 172, 1);
     grid-row: 2 / span 2;
     min-width: 200px;
     max-height: 66.666vh;
-    display: inline;
-    align-content: center;
-    text-align: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-content: left;
+    text-align: left;
+    align-items: left;
     background: $color2;
     color: $color3;
+  }
+
+  .options-dropdown{
+    grid-column: 2 /span 2;
   }
 
   .stats-container {
