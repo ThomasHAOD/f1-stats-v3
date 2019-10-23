@@ -9,8 +9,9 @@ export default class StatsContainer extends Component {
         <header className="dropdowns">
           <DropdownButton
             id="dropdown-basic-button"
-            title="Dropdown button"
+            title="Select Driver"
             variant="info"
+            // style={{display:'none'}}
           >
             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
@@ -19,7 +20,25 @@ export default class StatsContainer extends Component {
 
           <DropdownButton
             id="dropdown-basic-button"
-            title="Dropdown button"
+            title="Select Driver"
+            variant="info"
+          >
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </DropdownButton>
+          <DropdownButton
+            id="dropdown-basic-button"
+            title="Select Track"
+            variant="info"
+          >
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </DropdownButton>
+          <DropdownButton
+            id="dropdown-basic-button"
+            title="Select Constructor"
             variant="info"
           >
             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
