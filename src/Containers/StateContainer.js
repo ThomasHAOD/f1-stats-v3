@@ -17,7 +17,6 @@ export default class StateContainer extends Component {
 
     handleStatsShownChange(event){
         this.setState({statsShown: event.target.value})
-        console.log(this.state.statsShown)
     }    
     
 
