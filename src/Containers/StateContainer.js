@@ -10,12 +10,14 @@ export default class StateContainer extends Component {
         super(props)
     
         this.state = {
-             driverStatsSelected: false,
-             compareDriverSelected: false,
-             trackStatsSelected: false,
-             constructorStatsSelected: false
+             navSelected: ''
         }
+        this.handleNavChange = this.handleNavChange.bind(this)
     }
+
+    handleNavChange(event){
+        this.setState({navSelected: event.target.value})
+    }    
     
 
   render() {
@@ -23,11 +25,7 @@ export default class StateContainer extends Component {
       <div className="App">
         <MobileHeader />
         <div className="grid-container">
-          <Nav 
-            driverStatsSelected={driverStatsSelected}
-            compareDriverSelected={compareDriverSelected}
-            trackStatsSelected={trackStatsSelected}
-            constructorStatsSelected={constructorStatsSelected}/>
+          <Nav handleNavChange={this.handleNavChange}/>
           <OptionsContainer />
           <StatsContainer />
         </div>

@@ -1,27 +1,29 @@
 import React, { Component } from "react";
-import Button, { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
+import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 
-export default class Nav extends Component {
-  render() {
+const Nav = ({handleNavChange}) => {
+
     return (
       <div className="navbar">
         <h1>F1 Stats Console</h1>
 
-        <ToggleButtonGroup toggle className="nav-buttons" vertical name="navbar">
-          <ToggleButton type="radio" name="radio" defaultChecked value="1" variant="info">
+        <ToggleButtonGroup toggle className="nav-buttons" vertical name="navbar" >
+          <ToggleButton type="radio" name="radio" value="driver" variant="info" onChange={handleNavChange}>
             Driver Stats
           </ToggleButton>
-          <ToggleButton type="radio" name="radio" value="2" variant="info">
+          <ToggleButton type="radio" name="radio" value="compare" variant="info" onChange={handleNavChange}>
             Compare Drivers
           </ToggleButton>
-          <ToggleButton type="radio" name="radio" value="3" variant="info">
+          <ToggleButton type="radio" name="radio" value="track" variant="info" onChange={handleNavChange}>
             Track Stats
           </ToggleButton>
-          <ToggleButton type="radio" name="radio" value="4" variant="info">
+          <ToggleButton type="radio" name="radio" value="constructor" variant="info" onChange={handleNavChange}>
             Constructor Stats
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
     );
-  }
+
 }
+
+export default Nav;
