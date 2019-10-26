@@ -15,9 +15,9 @@ export default class StateContainer extends Component {
       constructorStatsShown: "none",
       homeTextShown: "inline",
       trackOptionsShown: "inline",
-      constructorOptionsShown: "inline"
+      constructorOptionsShown: "inline",
+      
     };
-
     this.handleStatsShownChange = this.handleStatsShownChange.bind(this);
   }
 
