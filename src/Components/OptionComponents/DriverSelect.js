@@ -22,8 +22,8 @@ const DriverSelect = props => {
   }
 
   return (
-    <Dropdown>
-      <Dropdown.Toggle variant="success" id="driver-selector">
+    <Dropdown style={{display: props.driverStatsShown}}>
+      <Dropdown.Toggle variant="danger" id="driver-selector" >
         Select Driver
       </Dropdown.Toggle>
 

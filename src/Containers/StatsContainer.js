@@ -1,37 +1,31 @@
 import React, { Component } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import Image from "react-bootstrap/Image";
+import DriverSelect from '../Components/OptionComponents/DriverSelect';
 
-export default class StatsContainer extends Component {
+ const StatsContainer = props => {
 
-    constructor(props) {
-        super(props)
-        
-    }
-    
+        const driverStatsShown = props.driverStatsShown
+        const compareStatsShown = props.compareStatsShown
+        const trackStatsShown = props.trackStatsShown
+        const constructorStatsShown = props.constructorStatsShown
+        const homeTextShown = props.homeTextShown
 
-  render() {
-        const driverStatsShown = this.props.driverStatsShown
-        const compareStatsShown = this.props.compareStatsShown
-        const trackStatsShown = this.props.trackStatsShown
-        const constructorStatsShown = this.props.constructorStatsShown
-        const homeTextShown = this.props.homeTextShown
     return (
       <div className="stats-container">
         <header className="dropdowns">
-          <Dropdown style={{display: driverStatsShown}}>
-            <Dropdown.Toggle variant="danger" id="driver-selector">
-              Select Driver
-            </Dropdown.Toggle>
-            <Dropdown.Menu></Dropdown.Menu>
-          </Dropdown>
+            <DriverSelect 
+            driverStatsShown={props.driverStatsShown}
+            drivers={props.currentDrivers}
+            onDriverSelected={props.onDriverSelected}
+            ></DriverSelect>
 
-          <Dropdown style={{display: compareStatsShown}}>
-            <Dropdown.Toggle variant="danger" id="driver-selector">
-              Select Driver
-            </Dropdown.Toggle>
-            <Dropdown.Menu></Dropdown.Menu>
-          </Dropdown>
+            <DriverSelect 
+            driverStatsShown={props.compareStatsShown}
+            drivers={props.currentDrivers}
+            onDriverSelected={props.onDriverSelected}
+            ></DriverSelect>
+          
 
           <Dropdown style={{display: trackStatsShown}}>
             <Dropdown.Toggle variant="danger" id="track-selector">
@@ -65,4 +59,6 @@ export default class StatsContainer extends Component {
       </div>
     );
   }
-}
+
+
+export default StatsContainer;
