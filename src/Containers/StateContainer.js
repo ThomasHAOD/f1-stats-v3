@@ -16,9 +16,85 @@ export default class StateContainer extends Component {
       homeTextShown: "inline",
       trackOptionsShown: "inline",
       constructorOptionsShown: "inline",
-      
+      allRaces: [],
+      driver1Name: "",
+      driver1Code: "",
+      driver1Number: "",
+      driver1Nationality: "",
+      drivers: [],
+      selectedDriver1SeasonsResults: [],
+      selectedDriver1TrackResults: []
     };
     this.handleStatsShownChange = this.handleStatsShownChange.bind(this);
+  }
+
+  componentDidMount() {
+    const driversUrl = "https://ergast.com/api/f1/current/drivers.json";
+    fetch(driversUrl)
+      .then(res => res.json())
+      .then(drivers =>
+        this.setState({
+          drivers: drivers.MRData.DriverTable.Drivers
+        })
+      );
+  }
+
+  onDriverSelected(event) {
+    const driverId = event;
+    const driverUrl = `https://ergast.com/api/f1/drivers/${driverId}/results.json?limit=1000`;
+    fetch(driverUrl)
+      .then(res => res.json())
+      .then(allRaces => {
+        this.setState({
+          allRaces: allRaces.MRData.RaceTable.Races,
+          driver1Name:
+            allRaces.MRData.RaceTable.Races[0].Results[0].Driver.givenName +
+            " " +
+            allRaces.MRData.RaceTable.Races[0].Results[0].Driver.familyName,
+          driver1Code:
+            allRaces.MRData.RaceTable.Races[0].Results[0].Driver.code,
+          driver1Number:
+            allRaces.MRData.RaceTable.Races[0].Results[0].Driver
+              .permanentNumber,
+          driver1Nationality:
+            allRaces.MRData.RaceTable.Races[0].Results[0].Driver.nationality
+        });
+      })
+      .catch(err => console.error);
+
+    const seasonUrl = `https://ergast.com/api/f1/drivers/${driverId}/seasons.json`;
+    fetch(seasonUrl)
+      .then(res => res.json())
+      .then(seasons => {
+        const promises = seasons.MRData.SeasonTable.Seasons.map(season => {
+          return fetch(
+            `https://ergast.com/api/f1/${season.season}/drivers/${driverId}/results.json`
+          ).then(res => res.json());
+        });
+
+        Promise.all(promises).then(results => {
+          this.setState({
+            selectedDriver1SeasonsResults: results
+          });
+        });
+      });
+
+    const circuitUrl = `https://ergast.com/api/f1/current/circuits.json`;
+    fetch(circuitUrl)
+      .then(res => res.json())
+      .then(circuits => {
+        const promises = circuits.MRData.CircuitTable.Circuits.map(circuit => {
+          return fetch(
+            `https://ergast.com/api/f1/circuits/${circuit.circuitId}/drivers/${driverId}/results.json`
+          ).then(res => res.json());
+        });
+
+        Promise.all(promises).then(results => {
+          this.setState({
+            selectedDriver1TrackResults: results
+          });
+        });
+      });
   }
 
   handleStatsShownChange(event) {
@@ -81,6 +157,8 @@ export default class StateContainer extends Component {
             trackStatsShown={this.state.trackStatsShown}
             constructorStatsShown={this.state.constructorStatsShown}
             homeTextShown={this.state.homeTextShown}
+            currentDrivers={this.state.drivers}
+            onDriverSelected={this.onDriverSelected}
           />
         </div>
       </div>
