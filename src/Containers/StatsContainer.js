@@ -5,8 +5,6 @@ import DriverSelect from '../Components/OptionComponents/DriverSelect';
 
  const StatsContainer = props => {
 
-        const driverStatsShown = props.driverStatsShown
-        const compareStatsShown = props.compareStatsShown
         const trackStatsShown = props.trackStatsShown
         const constructorStatsShown = props.constructorStatsShown
         const homeTextShown = props.homeTextShown
