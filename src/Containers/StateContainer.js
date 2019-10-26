@@ -14,7 +14,9 @@ export default class StateContainer extends Component {
             compareStatsShown: 'none',
             trackStatsShown: 'none',
             constructorStatsShown: 'none',
-            homeTextShown: 'inline'
+            homeTextShown: 'inline',
+            trackOptionsShown: 'inline',
+            constructorOptionsShown: 'inline'
         }
 
         this.handleStatsShownChange = this.handleStatsShownChange.bind(this)
@@ -67,10 +69,8 @@ export default class StateContainer extends Component {
         <div className="grid-container">
           <Nav handleStatsShownChange={this.handleStatsShownChange}/>
           <OptionsContainer 
-                driverStatsShown={this.state.driverStatsShown}
-                compareStatsShown={this.state.compareStatsShown}
-                trackStatsShown={this.state.trackStatsShown}
-                constructorStatsShown={this.state.constructorStatsShown}
+                trackOptionsShown={this.state.trackOptionsShown}
+                constructorOptionsShown={this.state.constructorOptionsShown}
           />
           <StatsContainer 
                 driverStatsShown={this.state.driverStatsShown}
