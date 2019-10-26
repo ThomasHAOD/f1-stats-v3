@@ -1,39 +1,47 @@
 import React, { Component } from "react";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Image from "react-bootstrap/Image";
 
 export default class StatsContainer extends Component {
 
-    
+    constructor(props) {
+        super(props)
+        
+    }
     
 
   render() {
+        const driverStatsShown = this.props.driverStatsShown
+        const compareStatsShown = this.props.compareStatsShown
+        const trackStatsShown = this.props.trackStatsShown
+        const constructorStatsShown = this.props.constructorStatsShown
+        const homeTextShown = this.props.homeTextShown
     return (
       <div className="stats-container">
         <header className="dropdowns">
-          <Dropdown>
+          <Dropdown style={{display: driverStatsShown}}>
             <Dropdown.Toggle variant="danger" id="driver-selector">
               Select Driver
             </Dropdown.Toggle>
-
             <Dropdown.Menu></Dropdown.Menu>
           </Dropdown>
-          <Dropdown>
+
+          <Dropdown style={{display: compareStatsShown}}>
             <Dropdown.Toggle variant="danger" id="driver-selector">
               Select Driver
             </Dropdown.Toggle>
-
             <Dropdown.Menu></Dropdown.Menu>
           </Dropdown>
-          <Dropdown>
+
+          <Dropdown style={{display: trackStatsShown}}>
             <Dropdown.Toggle variant="danger" id="track-selector">
               Select Track
             </Dropdown.Toggle>
 
             <Dropdown.Menu></Dropdown.Menu>
           </Dropdown>
-          <Dropdown>
+
+          <Dropdown style={{display: constructorStatsShown}}>
             <Dropdown.Toggle variant="danger" id="constructor-selector">
               Select Constructor
             </Dropdown.Toggle>
@@ -42,7 +50,7 @@ export default class StatsContainer extends Component {
           </Dropdown>
         </header>
         <div className="text-stats">
-          <div id="home-about">
+          <div id="home-about" style={{display: homeTextShown}}>
             <h1>F1 Statistics Console</h1>
             <h2>
               Welcome to the Formula 1 Statistics Console. Here you can view
@@ -52,7 +60,7 @@ export default class StatsContainer extends Component {
           </div>
         </div>
         <main className="graphs-container">
-          <Image fluid src="ferrari-leclerc.jpg" id="home-image"></Image>
+          <Image fluid src="ferrari-leclerc.jpg" id="home-image" style={{display: homeTextShown}}></Image>
         </main>
       </div>
     );

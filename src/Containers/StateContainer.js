@@ -10,8 +10,11 @@ export default class StateContainer extends Component {
         super(props)
     
         this.state = {
-            statsShown: 'home',
-            
+            driverStatsShown: 'none',
+            compareStatsShown: 'none',
+            trackStatsShown: 'none',
+            constructorStatsShown: 'none',
+            homeTextShown: 'inline'
         }
 
         this.handleStatsShownChange = this.handleStatsShownChange.bind(this)
@@ -19,7 +22,39 @@ export default class StateContainer extends Component {
     }
 
     handleStatsShownChange(event){
-        this.setState({statsShown: event.target.value})
+        if(event.target.value === 'driver'){
+            this.setState({
+                driverStatsShown: 'flex',
+                compareStatsShown: 'none',
+                trackStatsShown: 'none',
+                constructorStatsShown: 'none',
+                homeTextShown:'none'
+            })
+        } else if (event.target.value === 'compare'){
+            this.setState({
+                driverStatsShown: 'flex',
+                compareStatsShown: 'flex',
+                trackStatsShown: 'none',
+                constructorStatsShown: 'none',
+                homeTextShown:'none'
+            })
+        } else if (event.target.value === 'track'){
+            this.setState({
+                driverStatsShown: 'none',
+                compareStatsShown: 'none',
+                trackStatsShown: 'flex',
+                constructorStatsShown: 'none',
+                homeTextShown:'none'
+            })
+        } else if (event.target.value === 'constructor'){
+        this.setState({
+            driverStatsShown: 'none',
+            compareStatsShown: 'none',
+            trackStatsShown: 'none',
+            constructorStatsShown: 'flex',
+            homeTextShown:'none'
+        })
+        }
     }
     
     
@@ -31,9 +66,18 @@ export default class StateContainer extends Component {
         <MobileHeader />
         <div className="grid-container">
           <Nav handleStatsShownChange={this.handleStatsShownChange}/>
-          <OptionsContainer statsShown={this.state.statsShown}
+          <OptionsContainer 
+                driverStatsShown={this.state.driverStatsShown}
+                compareStatsShown={this.state.compareStatsShown}
+                trackStatsShown={this.state.trackStatsShown}
+                constructorStatsShown={this.state.constructorStatsShown}
           />
           <StatsContainer 
+                driverStatsShown={this.state.driverStatsShown}
+                compareStatsShown={this.state.compareStatsShown}
+                trackStatsShown={this.state.trackStatsShown}
+                constructorStatsShown={this.state.constructorStatsShown}
+                homeTextShown={this.state.homeTextShown}
           />
         </div>
       </div>
