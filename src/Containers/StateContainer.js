@@ -23,7 +23,8 @@ export default class StateContainer extends Component {
       driver1Nationality: "",
       drivers: [],
       selectedDriver1SeasonsResults: [],
-      selectedDriver1TrackResults: []
+      selectedDriver1TrackResults: [],
+      tracks: []
     };
     this.handleStatsShownChange = this.handleStatsShownChange.bind(this);
   }
@@ -37,6 +38,13 @@ export default class StateContainer extends Component {
           drivers: drivers.MRData.DriverTable.Drivers
         })
       );
+
+      const tracksUrl = 'https://ergast.com/api/f1/current/circuits.json'
+        fetch(tracksUrl)
+            .then(res => res.json())
+            .then(drivers => this.setState({
+                tracks: drivers.MRData.CircuitTable.Circuits
+            }))
   }
 
   onDriverSelected(event) {
@@ -95,7 +103,33 @@ export default class StateContainer extends Component {
           });
         });
       });
-  }
+    }
+
+    onTrackSelect(event) {
+        const trackId = event.target.value
+        this.setState({ selectedTrack: trackId })
+        if (this.state.code1) {
+            const driverId = this.state.driver1ID
+            console.log(driverId)
+            const url = `https://ergast.com/api/f1/circuits/${trackId}/drivers/${driverId}/results.json`
+            console.log(url)
+            fetch(url)
+                .then(res => res.json())
+                .then(results => this.setState({
+                    selectedDriver1TrackResults: results.MRData.RaceTable.Races
+                }))
+        }
+
+        if (this.state.code2) {
+            const driverId = this.state.driver2ID
+            const url = `https://ergast.com/api/f1/circuits/${trackId}/drivers/${driverId}/results.json`
+            fetch(url)
+                .then(res => res.json())
+                .then(results => this.setState({
+                    selectedDriver2TrackResults: results.MRData.RaceTable.Races
+                }))
+        }
+    }
 
   handleStatsShownChange(event) {
     if (event.target.value === "driver") {
@@ -159,6 +193,8 @@ export default class StateContainer extends Component {
             homeTextShown={this.state.homeTextShown}
             currentDrivers={this.state.drivers}
             onDriverSelected={this.onDriverSelected}
+            tracks={this.state.tracks}
+            onTrackSelected={this.onTrackSelect}
           />
         </div>
       </div>

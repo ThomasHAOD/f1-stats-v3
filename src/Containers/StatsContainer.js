@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import Image from "react-bootstrap/Image";
 import DriverSelect from '../Components/OptionComponents/DriverSelect';
+import TrackSelect from '../Components/OptionComponents/TrackSelect';
 
  const StatsContainer = props => {
 
@@ -24,14 +25,15 @@ import DriverSelect from '../Components/OptionComponents/DriverSelect';
             onDriverSelected={props.onDriverSelected}
             ></DriverSelect>
           
+          <TrackSelect
+                            tracks={props.tracks}
+                            onTrackSelected={props.onTrackSelect}
+                            trackStatsShown={props.trackStatsShown}
+                        />
 
-          <Dropdown style={{display: trackStatsShown}}>
-            <Dropdown.Toggle variant="danger" id="track-selector">
-              Select Track
-            </Dropdown.Toggle>
+          
 
-            <Dropdown.Menu></Dropdown.Menu>
-          </Dropdown>
+          
 
           <Dropdown style={{display: constructorStatsShown}}>
             <Dropdown.Toggle variant="danger" id="constructor-selector">
