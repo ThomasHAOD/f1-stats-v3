@@ -12,6 +12,8 @@ class OptionsContainer extends Component {
   }
 
   render() {
+      const trackOptionsShown = this.props.trackOptionsShown
+      const constructorOptionsShown = this.props.constructorOptionsShown
     return (
       <div className="options-container">
         <h3>Include Retirements</h3>
@@ -41,6 +43,7 @@ class OptionsContainer extends Component {
             id="dropdown-basic-button"
             title="Select Track"
             variant="info"
+            style={{display: trackOptionsShown}}
           >
             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
@@ -52,6 +55,7 @@ class OptionsContainer extends Component {
             id="dropdown-basic-button"
             title="Select Constructor"
             variant="info"
+            style={{display: constructorOptionsShown}}
           >
             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
