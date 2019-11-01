@@ -3,17 +3,11 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import CheckBox from "../Components/OptionComponents/CheckBox";
+import TrackSelect from '../Components/OptionComponents/TrackSelect';
+import ConstructorSelect from '../Components/OptionComponents/ConstructorSelect';
 
-class OptionsContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
-  render() {
-      const trackOptionsShown = this.props.trackOptionsShown
-      const constructorOptionsShown = this.props.constructorOptionsShown
+const OptionsContainer = props =>  {
+  
     return (
       <div className="options-container">
         <h3>Include Retirements</h3>
@@ -38,29 +32,16 @@ class OptionsContainer extends Component {
             <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
           </DropdownButton>
 
-          <DropdownButton
-            className="options-dropdown"
-            id="dropdown-basic-button"
-            title="Select Track"
-            variant="info"
-            style={{display: trackOptionsShown}}
-          >
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </DropdownButton>
+          <TrackSelect
+                            tracks={props.tracks}
+                            onTrackSelected={props.onTrackSelect}
+                            trackStatsShown={props.trackOptionsShown}
+                        />
 
-          <DropdownButton
-            className="options-dropdown"
-            id="dropdown-basic-button"
-            title="Select Constructor"
-            variant="info"
-            style={{display: constructorOptionsShown}}
-          >
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </DropdownButton>
+<ConstructorSelect
+          constructorStatsShown={props.constructorOptionsShown}
+          constructors={props.constructors}
+          />
 
           <DropdownButton
             className="options-dropdown"
@@ -79,6 +60,6 @@ class OptionsContainer extends Component {
       </div>
     );
   }
-}
+
 
 export default OptionsContainer;
