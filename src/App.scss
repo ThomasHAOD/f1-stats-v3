@@ -78,6 +78,7 @@ h3{
 @media only screen and (min-width: 46.875em) {
   .App {
     max-height: 100vh;
+    height:100vh;
   }
 
   .graphs-container{
@@ -141,5 +142,6 @@ h3{
     align-items: center;
     background: $color4;
     max-height: 100vh;
+    height: 100vh;
   }
 }
