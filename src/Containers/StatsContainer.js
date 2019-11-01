@@ -3,12 +3,9 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Image from "react-bootstrap/Image";
 import DriverSelect from '../Components/OptionComponents/DriverSelect';
 import TrackSelect from '../Components/OptionComponents/TrackSelect';
+import ConstructorSelect from '../Components/OptionComponents/ConstructorSelect';
 
  const StatsContainer = props => {
-
-        const trackStatsShown = props.trackStatsShown
-        const constructorStatsShown = props.constructorStatsShown
-        const homeTextShown = props.homeTextShown
 
     return (
       <div className="stats-container">
@@ -17,13 +14,13 @@ import TrackSelect from '../Components/OptionComponents/TrackSelect';
             driverStatsShown={props.driverStatsShown}
             drivers={props.currentDrivers}
             onDriverSelected={props.onDriverSelected}
-            ></DriverSelect>
+            />
 
             <DriverSelect 
             driverStatsShown={props.compareStatsShown}
             drivers={props.currentDrivers}
             onDriverSelected={props.onDriverSelected}
-            ></DriverSelect>
+            />
           
           <TrackSelect
                             tracks={props.tracks}
@@ -35,16 +32,13 @@ import TrackSelect from '../Components/OptionComponents/TrackSelect';
 
           
 
-          <Dropdown style={{display: constructorStatsShown}}>
-            <Dropdown.Toggle variant="danger" id="constructor-selector">
-              Select Constructor
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu></Dropdown.Menu>
-          </Dropdown>
+          <ConstructorSelect
+          constructorStatsShown={props.constructorStatsShown}
+          constructors={props.constructors}
+          />
         </header>
         <div className="text-stats">
-          <div id="home-about" style={{display: homeTextShown}}>
+          <div id="home-about" style={{display: props.homeTextShown}}>
             <h1>F1 Statistics Console</h1>
             <h2>
               Welcome to the Formula 1 Statistics Console. Here you can view
@@ -54,7 +48,7 @@ import TrackSelect from '../Components/OptionComponents/TrackSelect';
           </div>
         </div>
         <main className="graphs-container">
-          <Image fluid src="ferrari-leclerc.jpg" id="home-image" style={{display: homeTextShown}}></Image>
+          <Image fluid src="ferrari-leclerc.jpg" id="home-image" style={{display: props.homeTextShown}}></Image>
         </main>
       </div>
     );

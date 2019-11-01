@@ -8,11 +8,11 @@ const ConstructorSelect = props => {
     return (
       <Dropdown.Item
         as="button"
-        eventKey={constructor.driverId}
-        value={constructor.driverId}
+        eventKey={constructor.constructorId}
+        value={constructor.constructorId}
         onClick={handleChange}
       >
-        {constructor.givenName} {constructor.familyName}
+        {constructor.name}
       </Dropdown.Item>
     );
   });
@@ -23,8 +23,8 @@ const ConstructorSelect = props => {
 
   return (
     <Dropdown style={{display: props.constructorStatsShown}}>
-      <Dropdown.Toggle variant="danger" id="constructor-selector" >
-        Select Driver
+      <Dropdown.Toggle variant="warning" id="constructor-selector" >
+        Select Constructor
       </Dropdown.Toggle>
 
       <Dropdown.Menu>{options}</Dropdown.Menu>
