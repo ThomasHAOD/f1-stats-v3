@@ -24,7 +24,7 @@ const SeasonSelect = props => {
 
   return (
     <Dropdown >
-      <Dropdown.Toggle variant="danger" id="season-selector" >
+      <Dropdown.Toggle variant="light" id="season-selector" >
         Select Season
       </Dropdown.Toggle>
 
