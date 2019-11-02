@@ -9,6 +9,7 @@ export default class StateContainer extends Component {
     super(props);
 
     this.state = {
+      activeStats: "home",
       driverStatsShown: "none",
       compareStatsShown: "none",
       trackStatsShown: "none",
@@ -51,8 +52,9 @@ export default class StateContainer extends Component {
         })
       );
 
-      const constructorsUrl = "http://ergast.com/api/f1/current/constructors.json";
-      fetch(constructorsUrl)
+    const constructorsUrl =
+      "http://ergast.com/api/f1/current/constructors.json";
+    fetch(constructorsUrl)
       .then(res => res.json())
       .then(drivers =>
         this.setState({
@@ -89,8 +91,8 @@ export default class StateContainer extends Component {
       .then(res => res.json())
       .then(seasons => {
         this.setState({
-            seasons: seasons.MRData.SeasonTable.Seasons
-        })
+          seasons: seasons.MRData.SeasonTable.Seasons
+        });
         const promises = seasons.MRData.SeasonTable.Seasons.map(season => {
           return fetch(
             `https://ergast.com/api/f1/${season.season}/drivers/${driverId}/results.json`
@@ -100,7 +102,6 @@ export default class StateContainer extends Component {
         Promise.all(promises).then(results => {
           this.setState({
             selectedDriver1SeasonsResults: results
-            
           });
         });
       });
@@ -156,6 +157,7 @@ export default class StateContainer extends Component {
   handleStatsShownChange(event) {
     if (event.target.value === "driver") {
       this.setState({
+        activeStats: "driver",
         driverStatsShown: "flex",
         compareStatsShown: "none",
         trackStatsShown: "none",
@@ -166,6 +168,8 @@ export default class StateContainer extends Component {
       });
     } else if (event.target.value === "compare") {
       this.setState({
+        activeStats: "compare",
+
         driverStatsShown: "flex",
         compareStatsShown: "flex",
         trackStatsShown: "none",
@@ -176,6 +180,8 @@ export default class StateContainer extends Component {
       });
     } else if (event.target.value === "track") {
       this.setState({
+        activeStats: "track",
+
         driverStatsShown: "none",
         compareStatsShown: "none",
         trackStatsShown: "flex",
@@ -186,6 +192,8 @@ export default class StateContainer extends Component {
       });
     } else if (event.target.value === "constructor") {
       this.setState({
+        activeStats: "constructor",
+
         driverStatsShown: "none",
         compareStatsShown: "none",
         trackStatsShown: "none",
