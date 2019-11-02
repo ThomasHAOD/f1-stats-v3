@@ -24,10 +24,12 @@ export default class StateContainer extends Component {
       drivers: [],
       selectedDriver1SeasonsResults: [],
       selectedDriver1TrackResults: [],
+      seasons: [],
       tracks: [],
       constructors: []
     };
     this.handleStatsShownChange = this.handleStatsShownChange.bind(this);
+    this.onDriverSelected = this.onDriverSelected.bind(this);
   }
 
   componentDidMount() {
@@ -86,6 +88,9 @@ export default class StateContainer extends Component {
     fetch(seasonUrl)
       .then(res => res.json())
       .then(seasons => {
+        this.setState({
+            seasons: seasons.MRData.SeasonTable.Seasons
+        })
         const promises = seasons.MRData.SeasonTable.Seasons.map(season => {
           return fetch(
             `https://ergast.com/api/f1/${season.season}/drivers/${driverId}/results.json`
@@ -95,6 +100,7 @@ export default class StateContainer extends Component {
         Promise.all(promises).then(results => {
           this.setState({
             selectedDriver1SeasonsResults: results
+            
           });
         });
       });
@@ -203,6 +209,7 @@ export default class StateContainer extends Component {
             tracks={this.state.tracks}
             onTrackSelected={this.onTrackSelect}
             constructors={this.state.constructors}
+            seasons={this.state.seasons}
           />
           <StatsContainer
             driverStatsShown={this.state.driverStatsShown}

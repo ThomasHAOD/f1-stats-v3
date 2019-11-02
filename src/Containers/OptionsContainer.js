@@ -5,6 +5,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import CheckBox from "../Components/OptionComponents/CheckBox";
 import TrackSelect from '../Components/OptionComponents/TrackSelect';
 import ConstructorSelect from '../Components/OptionComponents/ConstructorSelect';
+import SeasonSelect from '../Components/OptionComponents/SeasonSelect';
 
 const OptionsContainer = props =>  {
   
@@ -42,7 +43,9 @@ const OptionsContainer = props =>  {
           constructorStatsShown={props.constructorOptionsShown}
           constructors={props.constructors}
           />
-
+        <SeasonSelect
+        seasons={props.seasons}
+        />
           <DropdownButton
             className="options-dropdown"
             id="dropdown-basic-button"
