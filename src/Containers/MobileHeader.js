@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button'
+import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 
 export default class MobileHeader extends Component {
     render() {
         return (
-            <header className="icon-container">
-                <Button variant="info">Nav</Button>
-                <Button variant="info">Options</Button>
-            </header>
+            <ToggleButtonGroup className="icon-container" name="mobile-nav-options">
+                <ToggleButton variant="info">Nav</ToggleButton>
+                <ToggleButton variant="info">Options</ToggleButton>
+            </ToggleButtonGroup>
         )
     }
 }

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./CheckBox.scss";
 
-export default class CheckBox extends Component {
-  render() {
+ const CheckBox = props => {
+
     return (
       <label className="checker">
         <input className="checkbox" type="checkbox" />
@@ -22,4 +22,6 @@ export default class CheckBox extends Component {
       </label>
     );
   }
-}
+
+
+export default CheckBox;
