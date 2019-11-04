@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DriverStats from '../../Containers/StatsContainers/DriverStats';
+import DriverStats from '../StatsContainers/DriverStatsContainer';
 import Image from "react-bootstrap/Image";
 import DriverSelect from '../../Components/OptionComponents/DriverSelect';
 import TrackSelect from '../../Components/OptionComponents/TrackSelect';
