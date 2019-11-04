@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
+import DriverStats from '../../Containers/StatsContainers/DriverStats';
 import Image from "react-bootstrap/Image";
 import DriverSelect from '../../Components/OptionComponents/DriverSelect';
 import TrackSelect from '../../Components/OptionComponents/TrackSelect';
@@ -38,6 +38,8 @@ import ConstructorSelect from '../../Components/OptionComponents/ConstructorSele
           />
         </header>
         <div className="text-stats">
+          <DriverStats
+          driverStatsShown={props.driverStatsShown}/>
           <div id="home-about" style={{display: props.homeTextShown}}>
             <h1>F1 Statistics Console</h1>
             <h2>
