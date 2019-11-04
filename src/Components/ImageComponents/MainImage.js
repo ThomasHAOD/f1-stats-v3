@@ -3,7 +3,7 @@ import Image from 'react-bootstrap/Image'
 
 const MainImage = (props) => {
     return (
-        <Image src="./logo512.png" roundedCircle fluid/>
+        <Image src="./logo192.png" roundedCircle fluid/>
             
     )
 }

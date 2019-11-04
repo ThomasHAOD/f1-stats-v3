@@ -56,6 +56,11 @@ h3{
   background: $color4;
 }
 
+.stats-sub-container {
+  max-height: 100%;
+  display: grid;
+}
+
 .dropdowns {
   display: flex;
   align-items: center;
