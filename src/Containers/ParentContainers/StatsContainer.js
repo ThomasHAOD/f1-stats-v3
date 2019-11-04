@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import Image from "react-bootstrap/Image";
-import DriverSelect from '../Components/OptionComponents/DriverSelect';
-import TrackSelect from '../Components/OptionComponents/TrackSelect';
-import ConstructorSelect from '../Components/OptionComponents/ConstructorSelect';
+import DriverSelect from '../../Components/OptionComponents/DriverSelect';
+import TrackSelect from '../../Components/OptionComponents/TrackSelect';
+import ConstructorSelect from '../../Components/OptionComponents/ConstructorSelect';
 
  const StatsContainer = props => {
 
