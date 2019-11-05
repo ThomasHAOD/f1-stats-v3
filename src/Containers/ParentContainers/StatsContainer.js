@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DriverStats from '../StatsContainers/DriverStatsContainer';
+import DriverGraphContainer from '../GraphContainers/DriverGraphContainer';
 import Image from "react-bootstrap/Image";
 import DriverSelect from '../../Components/OptionComponents/DriverSelect';
 import TrackSelect from '../../Components/OptionComponents/TrackSelect';
@@ -50,6 +51,7 @@ import ConstructorSelect from '../../Components/OptionComponents/ConstructorSele
           </div>
         </div>
         <main className="graphs-container">
+          <DriverGraphContainer/>
           <Image fluid src="ferrari-leclerc.jpg" id="home-image" style={{display: props.homeTextShown}}></Image>
         </main>
       </div>
