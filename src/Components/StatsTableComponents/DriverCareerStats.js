@@ -4,17 +4,21 @@ import Table from "react-bootstrap/Table";
 const DriverCareerStats = props => {
   return (
     <div className="stats-table" id="driver-stats-table">
-      <Table striped bordered hover variant="dark">
+      <Table striped bordered variant="light">
         
 
         <tbody>
         <tr>
             <th>Career Wins</th>
             <td>##</td>
+            <th>Average Grid</th>
+            <td>##</td>
             
           </tr>
           <tr>
             <th>Career Poles</th>
+            <td>99</td>
+            <th>Average Finish</th>
             <td>99</td>
             
           </tr>

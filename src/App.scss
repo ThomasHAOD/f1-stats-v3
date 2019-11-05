@@ -58,7 +58,13 @@ h3{
 
 .stats-sub-container {
   max-height: 100%;
-  display: grid;
+  display: flex;
+  justify-content:space-between;
+
+}
+
+.image-and-subtitle {
+  max-height: 100%;
 }
 
 .dropdowns {
