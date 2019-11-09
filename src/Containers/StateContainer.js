@@ -233,6 +233,10 @@ export default class StateContainer extends Component {
             tracks={this.state.tracks}
             onTrackSelected={this.onTrackSelect}
             constructors={this.state.constructors}
+            driver1Code={this.state.driver1Code}
+            driver1Name={this.state.driver1Name}
+            driver1Number={this.state.driver1Number}
+            driver1Nationality={this.state.driver1Nationality}
           />
         </div>
       </div>
