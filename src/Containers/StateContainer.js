@@ -27,7 +27,10 @@ export default class StateContainer extends Component {
       selectedDriver1TrackResults: [],
       seasons: [],
       tracks: [],
-      constructors: []
+      constructors: [],
+      includeRetirements: true,
+      includeWetRaces: true,
+      includeDryRaces: true
     };
     this.handleStatsShownChange = this.handleStatsShownChange.bind(this);
     this.onDriverSelected = this.onDriverSelected.bind(this);
