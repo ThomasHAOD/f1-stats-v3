@@ -7,6 +7,7 @@ import NumOfStarts from "./CareerStatsComponents/NumOfStarts";
 import NumOfWins from "./CareerStatsComponents/NumOfWins";
 import Retirements from "./CareerStatsComponents/Retirements";
 import RetirementPercentage from "./CareerStatsComponents/RetirementPercentage";
+import AverageFinishExcRetirements from "./CareerStatsComponents/AverageFinishExcRetirements";
 
 const DriverCareerStats = props => {
   return (
@@ -28,7 +29,7 @@ const DriverCareerStats = props => {
             <td>
               <NumOfPoles allRaces={props.allRaces} />
             </td>
-            <th>Average Finish</th>
+            <th>Average Finish (inc. retirements)</th>
             <td>
               <AverageFinish allRaces={props.allRaces} />
             </td>
@@ -37,6 +38,10 @@ const DriverCareerStats = props => {
             <th>Career Wins</th>
             <td>
               <NumOfWins allRaces={props.allRaces} />
+            </td>
+            <th>Average Finish (exc. retirements)</th>
+            <td>
+              <AverageFinishExcRetirements allRaces={props.allRaces} />
             </td>
           </tr>
           <tr>
