@@ -6,6 +6,7 @@ import NumOfPoles from "./CareerStatsComponents/NumOfPoles";
 import NumOfStarts from "./CareerStatsComponents/NumOfStarts";
 import NumOfWins from "./CareerStatsComponents/NumOfWins";
 import Retirements from "./CareerStatsComponents/Retirements";
+import RetirementPercentage from "./CareerStatsComponents/RetirementPercentage";
 
 const DriverCareerStats = props => {
   return (
@@ -42,6 +43,10 @@ const DriverCareerStats = props => {
             <th>Retirements</th>
             <td>
               <Retirements allRaces={props.allRaces} />
+            </td>
+            <th>Retirement %</th>
+            <td>
+              <RetirementPercentage allRaces={props.allRaces} />
             </td>
           </tr>
         </tbody>

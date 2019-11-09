@@ -18,7 +18,7 @@ const Retirements = props => {
     retirements = getRetirements();
   }
 
-  return <div id="average-finish">{retirements}</div>;
+  return <div id="retirements">{retirements}</div>;
 };
 
 export default Retirements;
