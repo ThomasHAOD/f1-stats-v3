@@ -5,6 +5,7 @@ import AverageGrid from "./CareerStatsComponents/AverageGrid";
 import NumOfPoles from "./CareerStatsComponents/NumOfPoles";
 import NumOfStarts from "./CareerStatsComponents/NumOfStarts";
 import NumOfWins from "./CareerStatsComponents/NumOfWins";
+import Retirements from "./CareerStatsComponents/Retirements";
 
 const DriverCareerStats = props => {
   return (
@@ -38,8 +39,10 @@ const DriverCareerStats = props => {
             </td>
           </tr>
           <tr>
-            <th>Constructor's Championships</th>
-            <td colSpan="">17</td>
+            <th>Retirements</th>
+            <td>
+              <Retirements allRaces={props.allRaces} />
+            </td>
           </tr>
         </tbody>
       </Table>
