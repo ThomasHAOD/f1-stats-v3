@@ -1,31 +1,41 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
+import AverageFinish from "./CareerStatsComponents/AverageFinish";
+import AverageGrid from "./CareerStatsComponents/AverageGrid";
+import NumOfPoles from "./CareerStatsComponents/NumOfPoles";
+import NumOfStarts from "./CareerStatsComponents/NumOfStarts";
+import NumOfWins from "./CareerStatsComponents/NumOfWins";
 
 const DriverCareerStats = props => {
   return (
     <div className="stats-table" id="driver-stats-table">
       <Table striped bordered variant="light">
-        
-
         <tbody>
-        <tr>
-            <th>Career Wins</th>
-            <td>##</td>
+          <tr>
+            <th>Career Starts</th>
+            <td>
+              <NumOfStarts allRaces={props.allRaces} />
+            </td>
             <th>Average Grid</th>
-            <td>##</td>
-            
+            <td>
+              <AverageGrid allRaces={props.allRaces} />
+            </td>
           </tr>
           <tr>
             <th>Career Poles</th>
-            <td>99</td>
+            <td>
+              <NumOfPoles allRaces={props.allRaces} />
+            </td>
             <th>Average Finish</th>
-            <td>99</td>
-            
+            <td>
+              <AverageFinish allRaces={props.allRaces} />
+            </td>
           </tr>
           <tr>
-            <th>World Championships</th>
-            <td>99</td>
-            
+            <th>Career Wins</th>
+            <td>
+              <NumOfWins allRaces={props.allRaces} />
+            </td>
           </tr>
           <tr>
             <th>Constructor's Championships</th>

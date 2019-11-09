@@ -237,6 +237,7 @@ export default class StateContainer extends Component {
             driver1Name={this.state.driver1Name}
             driver1Number={this.state.driver1Number}
             driver1Nationality={this.state.driver1Nationality}
+            allRaces={this.state.allRaces}
           />
         </div>
       </div>

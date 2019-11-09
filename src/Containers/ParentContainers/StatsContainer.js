@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DriverStats from "../StatsContainers/DriverStatsContainer";
+import DriverStatsContainer from "../StatsContainers/DriverStatsContainer";
 import DriverGraphContainer from "../ChartContainers/DriverChartsContainer";
 import Image from "react-bootstrap/Image";
 import DriverSelect from "../../Components/OptionComponents/DriverSelect";
@@ -34,12 +34,13 @@ const StatsContainer = props => {
         />
       </header>
       <div className="text-stats">
-        <DriverStats
+        <DriverStatsContainer
           driverStatsShown={props.driverStatsShown}
           driver1Name={props.driver1Name}
           driver1Number={props.driver1Number}
           driver1Code={props.driver1Code}
           driver1Nationality={props.driver1Nationality}
+          allRaces={props.allRaces}
         />
         <div id="home-about" style={{ display: props.homeTextShown }}>
           <h1>F1 Statistics Console</h1>

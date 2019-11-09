@@ -18,7 +18,7 @@ $color5: rgba(100, 182, 172, 1);
   background: $color2;
 }
 
-h3{
+h3 {
   font-size: 20px;
   grid-column: 1 / span 2;
 }
@@ -59,8 +59,7 @@ h3{
 .stats-sub-container {
   max-height: 100%;
   display: flex;
-  justify-content:space-between;
-
+  justify-content: space-between;
 }
 
 .image-and-subtitle {
@@ -71,7 +70,7 @@ h3{
 .dropdowns {
   display: flex;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   padding: 0 16px;
   background-color: $color2;
   height: 10%;
@@ -91,18 +90,18 @@ h3{
 @media only screen and (min-width: 46.875em) {
   .App {
     max-height: 100vh;
-    height:100vh;
+    height: 100vh;
   }
 
-  .graphs-container{
+  .graphs-container {
     overflow: auto;
   }
 
-  .stats-container{
+  .stats-container {
     overflow: auto;
   }
 
-  .options-container{
+  .options-container {
     overflow: auto;
   }
 
@@ -142,8 +141,8 @@ h3{
     color: $color3;
   }
 
-  .options-dropdown{
-    grid-column: 2 /span 2;
+  .options-dropdown {
+    grid-column: 2 / span 2;
   }
 
   .stats-container {

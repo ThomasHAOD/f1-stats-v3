@@ -3,7 +3,7 @@ import MainImage from "../../Components/ImageComponents/MainImage";
 import DriverMainDetails from "../../Components/MainDetailsComponents/DriverMainDetails";
 import DriverCareerStats from "../../Components/StatsTableComponents/DriverCareerStats";
 
-const DriverStats = props => {
+const DriverStatsContainer = props => {
   return (
     <div
       className="stats-sub-container"
@@ -17,9 +17,9 @@ const DriverStats = props => {
         driver1Code={props.driver1Code}
         driver1Nationality={props.driver1Nationality}
       />
-      <DriverCareerStats />
+      <DriverCareerStats allRaces={props.allRaces} />
     </div>
   );
 };
 
-export default DriverStats;
+export default DriverStatsContainer;
