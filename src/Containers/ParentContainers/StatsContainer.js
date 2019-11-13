@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DriverStatsContainer from "../StatsContainers/DriverStatsContainer";
-import DriverGraphContainer from "../ChartContainers/DriverChartsContainer";
+import DriverChartsContainer from "../ChartContainers/DriverChartsContainer";
 import Image from "react-bootstrap/Image";
 import DriverSelect from "../../Components/OptionComponents/DriverSelect";
 import TrackSelect from "../../Components/OptionComponents/TrackSelect";
@@ -83,7 +83,7 @@ const StatsContainer = props => {
             left: "50%"
           }}
         />
-        <DriverGraphContainer />
+        <DriverChartsContainer />
         <Image
           fluid
           src="ferrari-leclerc.jpg"

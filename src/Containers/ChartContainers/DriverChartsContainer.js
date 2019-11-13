@@ -1,12 +1,7 @@
-import React from 'react'
+import React from "react";
 
+const DriverGraphContainer = props => {
+  return <h1>Hello World</h1>;
+};
 
-const DriverGraphContainer = (props) => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
-
-export default DriverGraphContainer
+export default DriverGraphContainer;

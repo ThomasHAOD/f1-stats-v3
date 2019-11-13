@@ -69,7 +69,6 @@ export default class StateContainer extends Component {
 
   onDriverSelected(event) {
     this.setState({ loadingSpinnerShown: "flex", driverStatsShown: "none" });
-    console.log(this.state.loadingSpinnerShown);
     const driverId = event;
     const driverUrl = `https://ergast.com/api/f1/drivers/${driverId}/results.json?limit=1000`;
     fetch(driverUrl)
@@ -130,7 +129,6 @@ export default class StateContainer extends Component {
           });
         });
       });
-    console.log(this.state.loadingSpinnerShown);
   }
 
   onTrackSelect(event) {
@@ -138,9 +136,7 @@ export default class StateContainer extends Component {
     this.setState({ selectedTrack: trackId });
     if (this.state.code1) {
       const driverId = this.state.driver1ID;
-      console.log(driverId);
       const url = `https://ergast.com/api/f1/circuits/${trackId}/drivers/${driverId}/results.json`;
-      console.log(url);
       fetch(url)
         .then(res => res.json())
         .then(results =>
