@@ -83,7 +83,7 @@ const StatsContainer = props => {
             left: "50%"
           }}
         />
-        <DriverChartsContainer />
+        <DriverChartsContainer driverStatsShown={props.driverStatsShown} />
         <Image
           fluid
           src="ferrari-leclerc.jpg"

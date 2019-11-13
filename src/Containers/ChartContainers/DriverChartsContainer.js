@@ -1,7 +1,7 @@
 import React from "react";
 
 const DriverGraphContainer = props => {
-  return <h1>Hello World</h1>;
+  return <h1 style={{ display: props.driverStatsShown }}>Hello World</h1>;
 };
 
 export default DriverGraphContainer;
