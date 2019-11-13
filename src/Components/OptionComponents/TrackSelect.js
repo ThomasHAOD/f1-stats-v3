@@ -1,7 +1,6 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
-
 const TrackSelect = props => {
   const options = props.tracks.map((track, index) => {
     return (
@@ -21,8 +20,8 @@ const TrackSelect = props => {
   }
 
   return (
-    <Dropdown style={{display: props.trackStatsShown}} drop={'up'}>
-      <Dropdown.Toggle variant="success" id="track-selector" >
+    <Dropdown style={{ display: props.trackStatsShown }} drop={"up"}>
+      <Dropdown.Toggle variant="success" id="track-selector">
         Select Track
       </Dropdown.Toggle>
 

@@ -5,6 +5,7 @@ import Image from "react-bootstrap/Image";
 import DriverSelect from "../../Components/OptionComponents/DriverSelect";
 import TrackSelect from "../../Components/OptionComponents/TrackSelect";
 import ConstructorSelect from "../../Components/OptionComponents/ConstructorSelect";
+import Spinner from "react-bootstrap/Spinner";
 
 const StatsContainer = props => {
   return (
@@ -34,6 +35,11 @@ const StatsContainer = props => {
         />
       </header>
       <div className="text-stats">
+        <Spinner
+          animation="grow"
+          variant="danger"
+          style={{ display: props.loadingSpinnerShown }}
+        />
         <DriverStatsContainer
           driverStatsShown={props.driverStatsShown}
           driver1Name={props.driver1Name}
@@ -52,6 +58,11 @@ const StatsContainer = props => {
         </div>
       </div>
       <main className="graphs-container">
+        <Spinner
+          animation="grow"
+          variant="danger"
+          style={{ display: props.loadingSpinnerShown }}
+        />
         <DriverGraphContainer />
         <Image
           fluid

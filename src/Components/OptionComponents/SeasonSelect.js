@@ -1,11 +1,8 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
-
 const SeasonSelect = props => {
-    console.log(props.seasons)
   const options = props.seasons.map(season => {
-    
     return (
       <Dropdown.Item
         as="button"
@@ -23,8 +20,8 @@ const SeasonSelect = props => {
   }
 
   return (
-    <Dropdown >
-      <Dropdown.Toggle variant="light" id="season-selector" >
+    <Dropdown>
+      <Dropdown.Toggle variant="light" id="season-selector">
         Select Season
       </Dropdown.Toggle>
 

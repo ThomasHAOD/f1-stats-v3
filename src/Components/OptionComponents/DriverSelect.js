@@ -1,10 +1,8 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
-
 const DriverSelect = props => {
   const options = props.drivers.map(driver => {
-    console.log(props.drivers)
     return (
       <Dropdown.Item
         as="button"
@@ -22,8 +20,8 @@ const DriverSelect = props => {
   }
 
   return (
-    <Dropdown style={{display: props.driverStatsShown}}>
-      <Dropdown.Toggle variant="danger" id="driver-selector" >
+    <Dropdown style={{ display: props.driverStatsShown }}>
+      <Dropdown.Toggle variant="danger" id="driver-selector">
         Select Driver
       </Dropdown.Toggle>
 

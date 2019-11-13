@@ -1,10 +1,8 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
-
 const ConstructorSelect = props => {
   const options = props.constructors.map(constructor => {
-    console.log(props.constructors)
     return (
       <Dropdown.Item
         as="button"
@@ -22,8 +20,8 @@ const ConstructorSelect = props => {
   }
 
   return (
-    <Dropdown style={{display: props.constructorStatsShown}}>
-      <Dropdown.Toggle variant="warning" id="constructor-selector" >
+    <Dropdown style={{ display: props.constructorStatsShown }}>
+      <Dropdown.Toggle variant="warning" id="constructor-selector">
         Select Constructor
       </Dropdown.Toggle>
 
