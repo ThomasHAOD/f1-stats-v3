@@ -11,6 +11,16 @@ const StatsContainer = props => {
   return (
     <div className="stats-container">
       <header className="dropdowns">
+        <Spinner
+          animation="border"
+          variant="info"
+          style={{
+            display: props.loadingSpinnerShown,
+            position: "absolute",
+            left: "50%"
+          }}
+        />
+
         <DriverSelect
           driverStatsShown={props.driverStatsShown}
           drivers={props.currentDrivers}
@@ -36,9 +46,14 @@ const StatsContainer = props => {
       </header>
       <div className="text-stats">
         <Spinner
-          animation="grow"
-          variant="danger"
-          style={{ display: props.loadingSpinnerShown }}
+          animation="border"
+          variant="info"
+          style={{
+            display: props.loadingSpinnerShown,
+            position: "absolute",
+            top: "50%",
+            left: "50%"
+          }}
         />
         <DriverStatsContainer
           driverStatsShown={props.driverStatsShown}
@@ -59,9 +74,14 @@ const StatsContainer = props => {
       </div>
       <main className="graphs-container">
         <Spinner
-          animation="grow"
-          variant="danger"
-          style={{ display: props.loadingSpinnerShown }}
+          animation="border"
+          variant="info"
+          style={{
+            display: props.loadingSpinnerShown,
+            position: "absolute",
+            top: "50%",
+            left: "50%"
+          }}
         />
         <DriverGraphContainer />
         <Image
