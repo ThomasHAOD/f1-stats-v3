@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
-import "./SeasonsStats.css";
 
 class SeasonStats extends Component {
   constructor(props) {
