@@ -54,7 +54,6 @@ class SeasonStats extends Component {
 
   render() {
     const trackGridData = this.parseTrackGridData(this.props.tracks);
-
     const trackFinishingData = this.parseTrackFinishingData(this.props.tracks);
     const tracks = Object.values(
       trackGridData.map(data => {

@@ -11,11 +11,11 @@ const DriverChartsContainer = props => {
       className="charts-container"
       style={{ display: props.driverStatsShown }}
     >
-      <FinishingPie />
-      <GridPie />
-      <SeasonsStats />
-      <TrackResultsBySeason />
-      <TrackStats />
+      <FinishingPie allRaces={props.allRaces} />
+      <GridPie allRaces={props.allRaces} />
+      {/* <SeasonsStats allRaces={props.allRaces} seasons={props.seasons} /> */}
+
+      {/* <TrackStats allRaces={props.allRaces} tracks={props.tracks} /> */}
     </div>
   );
 };

@@ -239,6 +239,7 @@ export default class StateContainer extends Component {
             driver1Number={this.state.driver1Number}
             driver1Nationality={this.state.driver1Nationality}
             allRaces={this.state.allRaces}
+            seasons={this.state.seasons}
             loadingSpinnerShown={this.state.loadingSpinnerShown}
           />
         </div>
