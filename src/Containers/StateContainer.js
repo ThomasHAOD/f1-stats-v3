@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Nav from "./Nav";
 import OptionsContainer from "./ParentContainers/OptionsContainer";
 import StatsContainer from "./ParentContainers/StatsContainer";
 import MobileHeader from "./MobileHeader";
@@ -215,8 +214,8 @@ export default class StateContainer extends Component {
       <div className="App">
         <MobileHeader />
         <div className="grid-container">
-          <Nav handleStatsShownChange={this.handleStatsShownChange} />
           <OptionsContainer
+            handleStatsShownChange={this.handleStatsShownChange}
             trackOptionsShown={this.state.trackOptionsShown}
             constructorOptionsShown={this.state.constructorOptionsShown}
             tracks={this.state.tracks}

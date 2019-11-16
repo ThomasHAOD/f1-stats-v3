@@ -6,10 +6,12 @@ import CheckBox from "../../Components/OptionComponents/CheckBox";
 import TrackSelect from "../../Components/OptionComponents/TrackSelect";
 import ConstructorSelect from "../../Components/OptionComponents/ConstructorSelect";
 import SeasonSelect from "../../Components/OptionComponents/SeasonSelect";
+import Nav from "./Nav";
 
 const OptionsContainer = props => {
   return (
     <div className="options-container">
+      <Nav handleStatsShownChange={props.handleStatsShownChange} />
       <h3>Include Retirements</h3>
       <CheckBox />
       <br />
@@ -21,8 +23,6 @@ const OptionsContainer = props => {
       <br />
 
       <ButtonGroup vertical>
-        
-
         <TrackSelect
           tracks={props.tracks}
           onTrackSelected={props.onTrackSelect}
