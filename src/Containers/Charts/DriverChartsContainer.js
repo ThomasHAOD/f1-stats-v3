@@ -1,9 +1,9 @@
 import React from "react";
-import FinishingPie from "../../Components/ChartsComponents/DriverChartComponents/FinishingPie";
-import GridPie from "../../Components/ChartsComponents/DriverChartComponents/GridPie";
-import SeasonsStats from "../../Components/ChartsComponents/DriverChartComponents/SeasonsStats";
-import TrackResultsBySeason from "../../Components/ChartsComponents/DriverChartComponents/TrackResultsBySeason";
-import TrackStats from "../../Components/ChartsComponents/DriverChartComponents/TrackStats";
+import FinishingPie from "./ChartsComponents/DriverChartComponents/FinishingPie";
+import GridPie from "./ChartsComponents/DriverChartComponents/GridPie";
+import SeasonsStats from "./ChartsComponents/DriverChartComponents/SeasonsStats";
+import TrackResultsBySeason from "./ChartsComponents/DriverChartComponents/TrackResultsBySeason";
+import TrackStats from "./ChartsComponents/DriverChartComponents/TrackStats";
 
 const DriverChartsContainer = props => {
   return (

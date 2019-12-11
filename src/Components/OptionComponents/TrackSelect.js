@@ -20,7 +20,11 @@ const TrackSelect = props => {
   }
 
   return (
-    <Dropdown style={{ display: props.trackStatsShown }} drop={"up"}>
+    <Dropdown
+      style={{ display: props.trackStatsShown }}
+      drop={"up"}
+      className="dropdown"
+    >
       <Dropdown.Toggle variant="success" id="track-selector">
         Select Track
       </Dropdown.Toggle>

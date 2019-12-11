@@ -20,7 +20,7 @@ const SeasonSelect = props => {
   }
 
   return (
-    <Dropdown>
+    <Dropdown className="dropdown">
       <Dropdown.Toggle variant="light" id="season-selector">
         Select Season
       </Dropdown.Toggle>
