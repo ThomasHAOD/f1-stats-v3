@@ -71,6 +71,13 @@ h3 {
   display: flex;
 }
 
+.card {
+  display: inline-flexbox;
+  justify-content: space-evenly;
+  max-width: 50%;
+  margin: 10px;
+}
+
 .dropdowns {
   display: flex;
   align-items: center;

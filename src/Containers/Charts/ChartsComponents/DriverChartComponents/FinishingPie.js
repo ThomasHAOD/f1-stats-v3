@@ -45,7 +45,7 @@ class FinishingPie extends Component {
           }
         },
         title: {
-          text: this.props.code + " " + this.props.number
+          text: `Finishing Position`
         },
         subtitle: {
           text: `Times in Finishing Positions`
@@ -61,7 +61,7 @@ class FinishingPie extends Component {
         },
         series: [
           {
-            name: "Grid Results",
+            name: `Finishing Results`,
             size: 150,
             center: ["50%", "50%"],
             data: positions
@@ -71,7 +71,7 @@ class FinishingPie extends Component {
     };
     const { chartOptions } = options;
     return (
-      <Card style={{ maxWidth: "49%" }} id="finishing-pie" className="pie">
+      <Card style={{ width: "49%" }} id="finishing-pie" className="pie">
         <HighchartsReact
           highcharts={Highcharts}
           options={chartOptions}
