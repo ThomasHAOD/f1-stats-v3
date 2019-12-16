@@ -14,7 +14,7 @@ export default class StateContainer extends Component {
       trackStatsShown: "none",
       constructorStatsShown: "none",
       loadingSpinnerShown: "none",
-      homeTextShown: "inline",
+      homeTextShown: "contents",
       trackOptionsShown: "inline",
       constructorOptionsShown: "inline",
       allRaces: [],
@@ -81,6 +81,7 @@ export default class StateContainer extends Component {
 
   onDriverSelected(event) {
     this.setState({ loadingSpinnerShown: "flex", driverStatsShown: "none" });
+    console.log(this.state.nextRace);
     const driverId = event;
     const driverUrl = `https://ergast.com/api/f1/drivers/${driverId}/results.json?limit=1000`;
     fetch(driverUrl)
@@ -211,7 +212,7 @@ export default class StateContainer extends Component {
         compareStatsShown: "none",
         trackStatsShown: "none",
         constructorStatsShown: "none",
-        homeTextShown: "inline",
+        homeTextShown: "contents",
         trackOptionsShown: "inline",
         constructorOptionsShown: "inline"
       });

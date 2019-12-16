@@ -7,8 +7,12 @@ import TrackSelect from "../../Components/OptionComponents/TrackSelect";
 import ConstructorSelect from "../../Components/OptionComponents/ConstructorSelect";
 import NextRaceData from "../../Components/NextRaceComponents/NextRaceData";
 import Spinner from "react-bootstrap/Spinner";
+import Countdown from "react-countdown-now";
 
 const StatsContainer = props => {
+  const date = props.nextRace.date;
+  const time = props.nextRace.time;
+  const dateAndTime = [date, time].join();
   return (
     <div className="stats-container">
       <header className="dropdowns">
@@ -21,7 +25,13 @@ const StatsContainer = props => {
             left: "50%"
           }}
         />
-
+        <div id="next-race-header" style={{ display: props.homeTextShown }}>
+          <NextRaceData nextRace={props.nextRace} />
+          <h2>Starts in</h2>
+          <h2>
+            <Countdown date={dateAndTime} />
+          </h2>
+        </div>
         <DriverSelect
           driverStatsShown={props.driverStatsShown}
           drivers={props.currentDrivers}
@@ -64,9 +74,6 @@ const StatsContainer = props => {
           driver1Nationality={props.driver1Nationality}
           allRaces={props.allRaces}
         />
-        <div id="home-about" style={{ display: props.homeTextShown }}>
-          <NextRaceData nextRace={props.nextRace} />
-        </div>
       </div>
       <main className="graphs-container">
         <Spinner
