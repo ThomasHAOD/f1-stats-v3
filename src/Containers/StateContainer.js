@@ -34,6 +34,7 @@ export default class StateContainer extends Component {
     };
     this.handleStatsShownChange = this.handleStatsShownChange.bind(this);
     this.onDriverSelected = this.onDriverSelected.bind(this);
+    this.handleIncludeRetirements = this.handleIncludeRetirements.bind(this);
   }
 
   componentDidMount() {
@@ -158,6 +159,14 @@ export default class StateContainer extends Component {
     }
   }
 
+  handleIncludeRetirements() {
+    const includeRetirements = !this.state.includeRetirements;
+    this.setState({
+      includeRetirements: includeRetirements
+    });
+    console.log(this.state.includeRetirements);
+  }
+
   handleStatsShownChange(event) {
     if (event.target.value === "driver") {
       this.setState({
@@ -222,6 +231,7 @@ export default class StateContainer extends Component {
             onTrackSelected={this.onTrackSelect}
             constructors={this.state.constructors}
             seasons={this.state.seasons}
+            handleIncludeRetirements={this.handleIncludeRetirements}
           />
           <StatsContainer
             driverStatsShown={this.state.driverStatsShown}

@@ -13,7 +13,7 @@ const OptionsContainer = props => {
     <div className="options-container">
       <Nav handleStatsShownChange={props.handleStatsShownChange} />
       <h3>Include Retirements</h3>
-      <CheckBox />
+      <CheckBox handleChange={props.handleIncludeRetirements} />
       <br />
       <h3>Include Wet Races</h3>
       <CheckBox />
