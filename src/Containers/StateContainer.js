@@ -41,12 +41,16 @@ export default class StateContainer extends Component {
   }
 
   componentDidMount() {
+    this.setState({ loadingSpinnerShown: "flex", homeTextShown: "none" });
+
     const driversUrl = "https://ergast.com/api/f1/current/drivers.json";
     fetch(driversUrl)
       .then(res => res.json())
       .then(drivers =>
         this.setState({
-          drivers: drivers.MRData.DriverTable.Drivers
+          drivers: drivers.MRData.DriverTable.Drivers,
+          loadingSpinnerShown: "none",
+          homeTextShown: "contents"
         })
       );
 
@@ -81,7 +85,6 @@ export default class StateContainer extends Component {
 
   onDriverSelected(event) {
     this.setState({ loadingSpinnerShown: "flex", driverStatsShown: "none" });
-    console.log(this.state.nextRace);
     const driverId = event;
     const driverUrl = `https://ergast.com/api/f1/drivers/${driverId}/results.json?limit=1000`;
     fetch(driverUrl)
