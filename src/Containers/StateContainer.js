@@ -35,6 +35,8 @@ export default class StateContainer extends Component {
     this.handleStatsShownChange = this.handleStatsShownChange.bind(this);
     this.onDriverSelected = this.onDriverSelected.bind(this);
     this.handleIncludeRetirements = this.handleIncludeRetirements.bind(this);
+    this.handleIncludeWetRaces = this.handleIncludeWetRaces.bind(this);
+    this.handleIncludeDryRaces = this.handleIncludeDryRaces.bind(this);
   }
 
   componentDidMount() {
@@ -164,7 +166,20 @@ export default class StateContainer extends Component {
     this.setState({
       includeRetirements: includeRetirements
     });
-    console.log(this.state.includeRetirements);
+  }
+
+  handleIncludeWetRaces() {
+    const includeWetRaces = !this.state.includeWetRaces;
+    this.setState({
+      includeWetRaces: includeWetRaces
+    });
+  }
+
+  handleIncludeDryRaces() {
+    const includeDryRaces = !this.state.includeDryRaces;
+    this.setState({
+      includeDryRaces: includeDryRaces
+    });
   }
 
   handleStatsShownChange(event) {
@@ -232,6 +247,8 @@ export default class StateContainer extends Component {
             constructors={this.state.constructors}
             seasons={this.state.seasons}
             handleIncludeRetirements={this.handleIncludeRetirements}
+            handleIncludeWetRaces={this.handleIncludeWetRaces}
+            handleIncludeDryRaces={this.handleIncludeDryRaces}
           />
           <StatsContainer
             driverStatsShown={this.state.driverStatsShown}

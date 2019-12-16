@@ -16,10 +16,10 @@ const OptionsContainer = props => {
       <CheckBox handleChange={props.handleIncludeRetirements} />
       <br />
       <h3>Include Wet Races</h3>
-      <CheckBox />
+      <CheckBox handleChange={props.handleIncludeWetRaces} />
       <br />
       <h3>Include Dry Races</h3>
-      <CheckBox />
+      <CheckBox handleChange={props.handleIncludeDryRaces} />
       <br />
 
       <ButtonGroup vertical>
