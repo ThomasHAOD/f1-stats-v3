@@ -51,7 +51,7 @@ class GridPie extends Component {
           }
         },
         title: {
-          text: "Grid Results"
+          text: `Grid Results`
         },
         subtitle: {
           text: `Times in Grid Positions`
