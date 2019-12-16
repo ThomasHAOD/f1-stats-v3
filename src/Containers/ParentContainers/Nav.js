@@ -10,6 +10,15 @@ const Nav = ({ handleStatsShownChange }) => {
         <ToggleButton
           type="radio"
           name="radio"
+          value="home"
+          variant="info"
+          onChange={handleStatsShownChange}
+        >
+          Next Race
+        </ToggleButton>
+        <ToggleButton
+          type="radio"
+          name="radio"
           value="driver"
           variant="info"
           onChange={handleStatsShownChange}

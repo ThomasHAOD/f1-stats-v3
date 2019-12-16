@@ -60,6 +60,12 @@ h3 {
   max-height: 100%;
   display: flex;
   justify-content: space-between;
+  overflow-y: scroll;
+}
+
+table {
+  height: 40px;
+  max-height: 60%;
 }
 
 .image-and-subtitle {

@@ -30,7 +30,8 @@ export default class StateContainer extends Component {
       constructors: [],
       includeRetirements: true,
       includeWetRaces: true,
-      includeDryRaces: true
+      includeDryRaces: true,
+      nextRace: {}
     };
     this.handleStatsShownChange = this.handleStatsShownChange.bind(this);
     this.onDriverSelected = this.onDriverSelected.bind(this);
@@ -52,9 +53,9 @@ export default class StateContainer extends Component {
     const tracksUrl = "https://ergast.com/api/f1/current/circuits.json";
     fetch(tracksUrl)
       .then(res => res.json())
-      .then(drivers =>
+      .then(tracks =>
         this.setState({
-          tracks: drivers.MRData.CircuitTable.Circuits
+          tracks: tracks.MRData.CircuitTable.Circuits
         })
       );
 
@@ -62,9 +63,18 @@ export default class StateContainer extends Component {
       "http://ergast.com/api/f1/current/constructors.json";
     fetch(constructorsUrl)
       .then(res => res.json())
-      .then(drivers =>
+      .then(constructors =>
         this.setState({
-          constructors: drivers.MRData.ConstructorTable.Constructors
+          constructors: constructors.MRData.ConstructorTable.Constructors
+        })
+      );
+
+    const nextRaceUrl = "https://ergast.com/api/f1/current/next.json";
+    fetch(nextRaceUrl)
+      .then(res => res.json())
+      .then(nextRace =>
+        this.setState({
+          nextRace: nextRace.MRData.RaceTable.Races[0]
         })
       );
   }
@@ -194,22 +204,20 @@ export default class StateContainer extends Component {
         trackOptionsShown: "inline",
         constructorOptionsShown: "inline"
       });
-    } else if (event.target.value === "compare") {
+    } else if (event.target.value === "home") {
       this.setState({
-        activeStats: "compare",
-
-        driverStatsShown: "flex",
-        compareStatsShown: "flex",
+        activeStats: "home",
+        driverStatsShown: "none",
+        compareStatsShown: "none",
         trackStatsShown: "none",
         constructorStatsShown: "none",
-        homeTextShown: "none",
+        homeTextShown: "inline",
         trackOptionsShown: "inline",
         constructorOptionsShown: "inline"
       });
     } else if (event.target.value === "track") {
       this.setState({
         activeStats: "track",
-
         driverStatsShown: "none",
         compareStatsShown: "none",
         trackStatsShown: "flex",
@@ -221,7 +229,6 @@ export default class StateContainer extends Component {
     } else if (event.target.value === "constructor") {
       this.setState({
         activeStats: "constructor",
-
         driverStatsShown: "none",
         compareStatsShown: "none",
         trackStatsShown: "none",
@@ -268,6 +275,7 @@ export default class StateContainer extends Component {
             allRaces={this.state.allRaces}
             seasons={this.state.seasons}
             loadingSpinnerShown={this.state.loadingSpinnerShown}
+            nextRace={this.state.nextRace}
           />
         </div>
       </div>

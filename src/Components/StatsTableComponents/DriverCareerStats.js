@@ -12,7 +12,7 @@ import AverageFinishExcRetirements from "./CareerStatsComponents/AverageFinishEx
 const DriverCareerStats = props => {
   return (
     <div className="stats-table" id="driver-stats-table">
-      <Table striped bordered variant="light">
+      <Table striped bordered variant="light" size="sm">
         <tbody>
           <tr>
             <th>Career Starts</th>

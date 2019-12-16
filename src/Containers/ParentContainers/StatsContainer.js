@@ -5,6 +5,7 @@ import Image from "react-bootstrap/Image";
 import DriverSelect from "../../Components/OptionComponents/DriverSelect";
 import TrackSelect from "../../Components/OptionComponents/TrackSelect";
 import ConstructorSelect from "../../Components/OptionComponents/ConstructorSelect";
+import NextRaceData from "../../Components/NextRaceComponents/NextRaceData";
 import Spinner from "react-bootstrap/Spinner";
 
 const StatsContainer = props => {
@@ -64,12 +65,7 @@ const StatsContainer = props => {
           allRaces={props.allRaces}
         />
         <div id="home-about" style={{ display: props.homeTextShown }}>
-          <h1>F1 Statistics Console</h1>
-          <h2>
-            Welcome to the Formula 1 Statistics Console. Here you can view
-            historical statistics on Drivers, Tracks and Constructors for
-            whatever purpose you wish.
-          </h2>
+          <NextRaceData nextRace={props.nextRace} />
         </div>
       </div>
       <main className="graphs-container">
