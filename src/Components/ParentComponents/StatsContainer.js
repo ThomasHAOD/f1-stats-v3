@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import DriverStatsContainer from "../StatsComponents/DriverStatsContainer";
 import DriverChartsContainer from "../ChartsComponents/DriverChartsContainer";
-import Image from "react-bootstrap/Image";
 import DriverSelect from "../OptionComponents/DriverSelect";
 import TrackSelect from "../OptionComponents/TrackSelect";
 import ConstructorSelect from "../OptionComponents/ConstructorSelect";

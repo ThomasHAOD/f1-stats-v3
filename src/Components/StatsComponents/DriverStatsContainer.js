@@ -1,7 +1,6 @@
 import React from "react";
-import MainImage from "../ImageComponents/MainImage";
 import DriverMainDetails from "../MainDetailsComponents/DriverMainDetails";
-import DriverCareerStats from "../StatsTableComponents/DriverCareerStats";
+import DriverCareerStats from "./DriverStatsComponents/DriverCareerStats";
 
 const DriverStatsContainer = props => {
   return (
@@ -11,7 +10,6 @@ const DriverStatsContainer = props => {
         id="driver-stats"
         style={{ display: props.driverStatsShown }}
       >
-        <MainImage />
         <DriverMainDetails
           driver1Name={props.driver1Name}
           driver1Number={props.driver1Number}
