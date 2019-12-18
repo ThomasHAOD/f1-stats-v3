@@ -1,0 +1,29 @@
+$activeColor: #27ae60;
+$darkenColor: darken($activeColor, 20%);
+$background: #3498db;
+
+$color1: rgba(178, 23, 23, 1);
+$color2: rgba(3, 63, 99, 1);
+$color3: rgba(255, 255, 250, 1);
+$color4: rgba(116, 117, 114, 1);
+$color5: rgba(100, 182, 172, 1);
+
+.navbar {
+  display: none;
+}
+
+@media only screen and (min-width: 46.875em) {
+  .navbar {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 1;
+    min-width: 200px;
+    display: inline;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    background: $color2;
+    color: $color3;
+    border: 3px;
+    border-color: $color3;
+  }
+}
