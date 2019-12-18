@@ -10,24 +10,9 @@ $color3: rgba(255, 255, 250, 1);
 $color4: rgba(116, 117, 114, 1);
 $color5: rgba(100, 182, 172, 1);
 
-.App {
-  background: $color3;
-  font-family: "Abel", sans-serif;
-  width: 100vw;
-  text-align: center;
-  background: $color2;
-}
-
 h3 {
   font-size: 20px;
   grid-column: 1 / span 2;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  height: auto;
 }
 
 .navbar {
@@ -114,11 +99,6 @@ table {
 }
 
 @media only screen and (min-width: 46.875em) {
-  .App {
-    max-height: 100vh;
-    height: 100vh;
-  }
-
   .graphs-container {
     overflow: auto;
   }

@@ -1,0 +1,31 @@
+$activeColor: #27ae60;
+$darkenColor: darken($activeColor, 20%);
+$background: #3498db;
+
+$color1: rgba(178, 23, 23, 1);
+$color2: rgba(3, 63, 99, 1);
+$color3: rgba(255, 255, 250, 1);
+$color4: rgba(116, 117, 114, 1);
+$color5: rgba(100, 182, 172, 1);
+
+.App {
+  background: $color3;
+  font-family: "Abel", sans-serif;
+  width: 100vw;
+  text-align: center;
+  background: $color2;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: auto;
+}
+
+@media only screen and (min-width: 46.875em) {
+  .App {
+    max-height: 100vh;
+    height: 100vh;
+  }
+}

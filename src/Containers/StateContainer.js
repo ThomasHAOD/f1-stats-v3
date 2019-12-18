@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import OptionsContainer from "../Components/ParentComponents/OptionsContainer";
 import StatsContainer from "../Components/ParentComponents/StatsContainer";
 import MobileHeader from "./MobileHeader";
+import "./StateContainer.scss";
 
 export default class StateContainer extends Component {
   constructor(props) {
