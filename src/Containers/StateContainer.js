@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import OptionsContainer from "./ParentContainers/OptionsContainer";
-import StatsContainer from "./ParentContainers/StatsContainer";
+import OptionsContainer from "../Components/ParentComponents/OptionsContainer";
+import StatsContainer from "../Components/ParentComponents/StatsContainer";
 import MobileHeader from "./MobileHeader";
 
 export default class StateContainer extends Component {
@@ -176,23 +176,23 @@ export default class StateContainer extends Component {
   }
 
   handleIncludeRetirements() {
-    const includeRetirements = !this.state.includeRetirements;
+    const newIncludeRetirements = !this.state.includeRetirements;
     this.setState({
-      includeRetirements: includeRetirements
+      includeRetirements: newIncludeRetirements
     });
   }
 
   handleIncludeWetRaces() {
-    const includeWetRaces = !this.state.includeWetRaces;
+    const newIncludeWetRaces = !this.state.includeWetRaces;
     this.setState({
-      includeWetRaces: includeWetRaces
+      includeWetRaces: newIncludeWetRaces
     });
   }
 
   handleIncludeDryRaces() {
-    const includeDryRaces = !this.state.includeDryRaces;
+    const newIncludeDryRaces = !this.state.includeDryRaces;
     this.setState({
-      includeDryRaces: includeDryRaces
+      includeDryRaces: newIncludeDryRaces
     });
   }
 

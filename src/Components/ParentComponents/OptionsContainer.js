@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
-import CheckBox from "../../Components/OptionComponents/CheckBox";
-import TrackSelect from "../../Components/OptionComponents/TrackSelect";
-import ConstructorSelect from "../../Components/OptionComponents/ConstructorSelect";
-import SeasonSelect from "../../Components/OptionComponents/SeasonSelect";
+import CheckBox from "../OptionComponents/CheckBox";
+import TrackSelect from "../OptionComponents/TrackSelect";
+import ConstructorSelect from "../OptionComponents/ConstructorSelect";
+import SeasonSelect from "../OptionComponents/SeasonSelect";
 import Nav from "./Nav";
 
 const OptionsContainer = props => {

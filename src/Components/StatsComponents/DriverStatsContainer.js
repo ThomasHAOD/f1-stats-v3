@@ -1,7 +1,7 @@
 import React from "react";
-import MainImage from "../../Components/ImageComponents/MainImage";
-import DriverMainDetails from "../../Components/MainDetailsComponents/DriverMainDetails";
-import DriverCareerStats from "../../Components/StatsTableComponents/DriverCareerStats";
+import MainImage from "../ImageComponents/MainImage";
+import DriverMainDetails from "../MainDetailsComponents/DriverMainDetails";
+import DriverCareerStats from "../StatsTableComponents/DriverCareerStats";
 
 const DriverStatsContainer = props => {
   return (
