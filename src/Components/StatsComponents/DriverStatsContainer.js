@@ -1,6 +1,7 @@
 import React from "react";
 import DriverMainDetails from "../MainDetailsComponents/DriverMainDetails";
 import DriverCareerStats from "./DriverStatsComponents/DriverCareerStats";
+import "./DriverStatsContainer.scss";
 
 const DriverStatsContainer = props => {
   return (
