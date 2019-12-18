@@ -7,6 +7,7 @@ import ConstructorSelect from "../OptionComponents/ConstructorSelect";
 import NextRaceData from "../NextRaceComponents/NextRaceData";
 import Spinner from "react-bootstrap/Spinner";
 import Countdown from "react-countdown-now";
+import "./StatsContainer.scss";
 
 const StatsContainer = props => {
   const date = props.nextRace.date;
