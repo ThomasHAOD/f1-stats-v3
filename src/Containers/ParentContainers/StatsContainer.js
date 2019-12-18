@@ -74,6 +74,9 @@ const StatsContainer = props => {
           driver1Nationality={props.driver1Nationality}
           allRaces={props.allRaces}
         />
+        <h2 style={{ display: props.homeTextShown }}>
+          Amazing Prediction Stats
+        </h2>
       </div>
       <main className="graphs-container">
         <Spinner
@@ -92,12 +95,10 @@ const StatsContainer = props => {
           seasons={props.seasons}
           tracks={props.tracks}
         />
-        <Image
-          fluid
-          src="ferrari-leclerc.jpg"
-          id="home-image"
-          style={{ display: props.homeTextShown }}
-        ></Image>
+
+        <h1 id="home-image" style={{ display: props.homeTextShown }}>
+          Incredible Predication Charts
+        </h1>
       </main>
     </div>
   );
