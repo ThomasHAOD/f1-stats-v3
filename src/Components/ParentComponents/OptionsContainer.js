@@ -5,6 +5,7 @@ import TrackSelect from "../OptionComponents/TrackSelect";
 import ConstructorSelect from "../OptionComponents/ConstructorSelect";
 import SeasonSelect from "../OptionComponents/SeasonSelect";
 import Nav from "./Nav";
+import "./OptionsContainer.scss";
 
 const OptionsContainer = props => {
   return (

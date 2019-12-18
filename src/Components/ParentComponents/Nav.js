@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 import "./Nav.scss";
 

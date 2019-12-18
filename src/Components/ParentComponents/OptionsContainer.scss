@@ -1,0 +1,31 @@
+$activeColor: #27ae60;
+$darkenColor: darken($activeColor, 20%);
+$background: #3498db;
+
+$color1: rgba(178, 23, 23, 1);
+$color2: rgba(3, 63, 99, 1);
+$color3: rgba(255, 255, 250, 1);
+$color4: rgba(116, 117, 114, 1);
+$color5: rgba(100, 182, 172, 1);
+
+.options-container {
+  display: none;
+  z-index: 100;
+}
+
+@media only screen and (min-width: 46.875em) {
+  .options-container {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 3;
+    min-width: 200px;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-content: left;
+    text-align: left;
+    align-items: left;
+    background: $color2;
+    color: $color3;
+    overflow: auto;
+  }
+}
