@@ -1,4 +1,5 @@
 import React from "react";
+import "./MainDetails.css";
 
 const DriverMainDetails = props => {
   if (props.driver1Code) {
@@ -8,12 +9,17 @@ const DriverMainDetails = props => {
         id="driver-main-details"
         style={{ display: props.driverStatsShown }}
       >
-        <h1>{props.driver1Name}</h1>
-        <h1>
-          {props.driver1Code}:{props.driver1Number}
-        </h1>
-        <h2>34</h2>
-        <h2>{props.driver1Nationality}</h2>
+        <div style={{ display: "inline" }}>
+          <h1>{props.driver1Name}</h1>
+
+          <h1>
+            {props.driver1Code}:{props.driver1Number}
+          </h1>
+
+          <h2>34</h2>
+
+          <h2>{props.driver1Nationality}</h2>
+        </div>
       </div>
     );
   } else {
