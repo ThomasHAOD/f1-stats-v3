@@ -17,7 +17,7 @@ const DriverCareerStats = props => {
         id="driver-stats-table"
         style={{ display: props.driverStatsShown }}
       >
-        <Table striped bordered variant="light" size="sm">
+        <Table striped bordered variant="light">
           <tbody>
             <tr>
               <th>Career Starts</th>
