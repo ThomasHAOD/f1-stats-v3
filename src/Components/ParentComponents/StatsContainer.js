@@ -75,10 +75,10 @@ const StatsContainer = props => {
           allRaces={props.allRaces}
         />
         <h2 style={{ display: props.homeTextShown }}>
-          Amazing Prediction Stats
+          Main Details of Race/Driver/Track/Contructor
         </h2>
       </div>
-      <main className="graphs-container" style={{ display: "none" }}>
+      <main className="graphs-container" style={{ display: props.chartsShown }}>
         <Spinner
           animation="border"
           variant="info"
@@ -100,7 +100,7 @@ const StatsContainer = props => {
           Incredible Predication Charts
         </h1>
       </main>
-      <main className="stats-container" style={{ display: "flex" }}>
+      <main className="stats-container" style={{ display: props.statsShown }}>
         <Spinner
           animation="border"
           variant="info"

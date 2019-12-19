@@ -2,7 +2,7 @@ import React from "react";
 import { ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 import "./Nav.scss";
 
-const Nav = ({ handleStatsShownChange }) => {
+const Nav = ({ handleStatsShownChange, handleStatsOrCharts }) => {
   return (
     <div className="navbar">
       <h1>F1 Stats Console</h1>
@@ -63,7 +63,7 @@ const Nav = ({ handleStatsShownChange }) => {
           value="stats"
           variant="warning"
           selected
-          onChange={handleStatsShownChange}
+          onChange={handleStatsOrCharts}
         >
           Show Stats
         </ToggleButton>
@@ -72,7 +72,7 @@ const Nav = ({ handleStatsShownChange }) => {
           name="radio"
           value="charts"
           variant="warning"
-          onChange={handleStatsShownChange}
+          onChange={handleStatsOrCharts}
         >
           Show Charts
         </ToggleButton>

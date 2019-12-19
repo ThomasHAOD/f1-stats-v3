@@ -41,6 +41,7 @@ export default class StateContainer extends Component {
     this.handleIncludeRetirements = this.handleIncludeRetirements.bind(this);
     this.handleIncludeWetRaces = this.handleIncludeWetRaces.bind(this);
     this.handleIncludeDryRaces = this.handleIncludeDryRaces.bind(this);
+    this.handleStatsOrCharts = this.handleStatsOrCharts.bind(this);
   }
 
   componentDidMount() {
@@ -247,6 +248,14 @@ export default class StateContainer extends Component {
     }
   }
 
+  handleStatsOrCharts(event) {
+    if (event.target.value === "stats") {
+      this.setState({ statsShown: "flex", chartsShown: "none" });
+    } else if (event.target.value === "charts") {
+      this.setState({ statsShown: "none", chartsShown: "flex" });
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -263,6 +272,7 @@ export default class StateContainer extends Component {
             handleIncludeRetirements={this.handleIncludeRetirements}
             handleIncludeWetRaces={this.handleIncludeWetRaces}
             handleIncludeDryRaces={this.handleIncludeDryRaces}
+            handleStatsOrCharts={this.handleStatsOrCharts}
           />
           <StatsContainer
             driverStatsShown={this.state.driverStatsShown}
@@ -283,6 +293,8 @@ export default class StateContainer extends Component {
             seasons={this.state.seasons}
             loadingSpinnerShown={this.state.loadingSpinnerShown}
             nextRace={this.state.nextRace}
+            statsShown={this.state.statsShown}
+            chartsShown={this.state.chartsShown}
           />
         </div>
       </div>

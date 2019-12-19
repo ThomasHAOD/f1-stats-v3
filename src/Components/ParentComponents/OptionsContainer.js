@@ -10,7 +10,10 @@ import "./OptionsContainer.scss";
 const OptionsContainer = props => {
   return (
     <div className="options-container">
-      <Nav handleStatsShownChange={props.handleStatsShownChange} />
+      <Nav
+        handleStatsShownChange={props.handleStatsShownChange}
+        handleStatsOrCharts={props.handleStatsOrCharts}
+      />
       <h3>Include Retirements</h3>
       <CheckBox handleChange={props.handleIncludeRetirements} />
       <br />
