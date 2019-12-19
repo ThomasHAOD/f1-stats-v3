@@ -18,6 +18,8 @@ export default class StateContainer extends Component {
       homeTextShown: "contents",
       trackOptionsShown: "inline",
       constructorOptionsShown: "inline",
+      statsShown: "flex",
+      chartsShown: "none",
       allRaces: [],
       driver1Name: "",
       driver1Code: "",
