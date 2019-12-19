@@ -13,6 +13,7 @@ const Nav = ({ handleStatsShownChange }) => {
           name="radio"
           value="home"
           variant="info"
+          selected
           onChange={handleStatsShownChange}
         >
           Next Race
@@ -46,6 +47,34 @@ const Nav = ({ handleStatsShownChange }) => {
           onChange={handleStatsShownChange}
         >
           Constructor Stats
+        </ToggleButton>
+      </ToggleButtonGroup>
+      <br />
+      <br />
+
+      <ToggleButtonGroup
+        toggle
+        className="stats-or-charts"
+        name="stats-or-charts"
+      >
+        <ToggleButton
+          type="radio"
+          name="radio"
+          value="stats"
+          variant="warning"
+          selected
+          onChange={handleStatsShownChange}
+        >
+          Show Stats
+        </ToggleButton>
+        <ToggleButton
+          type="radio"
+          name="radio"
+          value="charts"
+          variant="warning"
+          onChange={handleStatsShownChange}
+        >
+          Show Charts
         </ToggleButton>
       </ToggleButtonGroup>
     </div>
