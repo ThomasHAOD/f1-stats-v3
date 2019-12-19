@@ -111,12 +111,6 @@ const StatsContainer = props => {
             left: "50%"
           }}
         />
-        <DriverChartsContainer
-          driverStatsShown={props.driverStatsShown}
-          allRaces={props.allRaces}
-          seasons={props.seasons}
-          tracks={props.tracks}
-        />
 
         <h1 id="home-image" style={{ display: props.homeTextShown }}>
           Incredible Predication Stats
