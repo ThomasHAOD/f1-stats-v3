@@ -7,6 +7,8 @@ import ConstructorSelect from "../OptionComponents/ConstructorSelect";
 import NextRaceData from "../NextRaceComponents/NextRaceData";
 import Spinner from "react-bootstrap/Spinner";
 import Countdown from "react-countdown-now";
+import DriverMainDetails from "../MainDetailsComponents/DriverMainDetails";
+
 import "./StatsContainer.scss";
 
 const StatsContainer = props => {
@@ -66,17 +68,18 @@ const StatsContainer = props => {
             left: "50%"
           }}
         />
-        <DriverStatsContainer
-          driverStatsShown={props.driverStatsShown}
+
+        <h2 style={{ display: props.homeTextShown }}>
+          Main Details of Race/Driver/Track/Contructor
+        </h2>
+
+        <DriverMainDetails
           driver1Name={props.driver1Name}
           driver1Number={props.driver1Number}
           driver1Code={props.driver1Code}
           driver1Nationality={props.driver1Nationality}
-          allRaces={props.allRaces}
+          driverStatsShown={props.driverStatsShown}
         />
-        <h2 style={{ display: props.homeTextShown }}>
-          Main Details of Race/Driver/Track/Contructor
-        </h2>
       </div>
       <main className="graphs-container" style={{ display: props.chartsShown }}>
         <Spinner
@@ -110,6 +113,14 @@ const StatsContainer = props => {
             top: "50%",
             left: "50%"
           }}
+        />
+        <DriverStatsContainer
+          driverStatsShown={props.driverStatsShown}
+          driver1Name={props.driver1Name}
+          driver1Number={props.driver1Number}
+          driver1Code={props.driver1Code}
+          driver1Nationality={props.driver1Nationality}
+          allRaces={props.allRaces}
         />
 
         <h1 id="home-image" style={{ display: props.homeTextShown }}>

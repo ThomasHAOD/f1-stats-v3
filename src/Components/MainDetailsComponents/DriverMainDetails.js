@@ -3,7 +3,11 @@ import React from "react";
 const DriverMainDetails = props => {
   if (props.driver1Code) {
     return (
-      <div className="main-details" id="driver-main-details">
+      <div
+        className="main-details"
+        id="driver-main-details"
+        style={{ display: props.driverStatsShown }}
+      >
         <h1>{props.driver1Name}</h1>
         <h1>
           {props.driver1Code}:{props.driver1Number}
