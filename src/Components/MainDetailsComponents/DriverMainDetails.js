@@ -1,10 +1,11 @@
 import React from "react";
 import "./MainDetails.css";
+import Card from "react-bootstrap/Card";
 
 const DriverMainDetails = props => {
   if (props.driver1Code) {
     return (
-      <div
+      <Card
         className="main-details"
         id="driver-main-details"
         style={{ display: props.driverStatsShown }}
@@ -20,7 +21,7 @@ const DriverMainDetails = props => {
 
           <h2>{props.driver1Nationality}</h2>
         </div>
-      </div>
+      </Card>
     );
   } else {
     return null;

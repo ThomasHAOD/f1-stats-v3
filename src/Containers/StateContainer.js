@@ -30,6 +30,7 @@ export default class StateContainer extends Component {
       selectedDriver1TrackResults: [],
       seasons: [],
       tracks: [],
+      selectedTrackResults: [],
       constructors: [],
       includeRetirements: true,
       includeWetRaces: true,
@@ -42,6 +43,7 @@ export default class StateContainer extends Component {
     this.handleIncludeWetRaces = this.handleIncludeWetRaces.bind(this);
     this.handleIncludeDryRaces = this.handleIncludeDryRaces.bind(this);
     this.handleStatsOrCharts = this.handleStatsOrCharts.bind(this);
+    this.onTrackWithDriverSelect = this.onTrackWithDriverSelect.bind(this);
   }
 
   componentDidMount() {
@@ -151,7 +153,7 @@ export default class StateContainer extends Component {
       });
   }
 
-  onTrackSelect(event) {
+  onTrackWithDriverSelect(event) {
     const trackId = event.target.value;
     this.setState({ selectedTrack: trackId });
     if (this.state.code1) {
