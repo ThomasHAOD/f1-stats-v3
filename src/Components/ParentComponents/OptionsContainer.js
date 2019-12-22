@@ -34,6 +34,8 @@ const OptionsContainer = props => {
         {/* <ConstructorSelect
           constructorStatsShown={props.constructorOptionsShown}
           constructors={props.constructors}
+          onConstructorSelect={props.onConstructorSelect}
+
         />
         <SeasonSelect seasons={props.seasons} /> */}
       </ButtonGroup>

@@ -16,7 +16,7 @@ const ConstructorSelect = props => {
   });
 
   function handleChange(event) {
-    props.onConstructorSelected(event.target.value, props.number);
+    props.onConstructorSelect(event.target.value);
   }
 
   return (

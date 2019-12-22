@@ -55,6 +55,7 @@ const StatsContainer = props => {
         <ConstructorSelect
           constructorStatsShown={props.constructorStatsShown}
           constructors={props.constructors}
+          onConstructorSelect={props.onConstructorSelect}
         />
       </header>
       <div className="general-info">

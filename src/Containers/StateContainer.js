@@ -30,8 +30,11 @@ export default class StateContainer extends Component {
       selectedDriver1TrackResults: [],
       seasons: [],
       tracks: [],
+      selectedTrack: "",
       selectedTrackResults: [],
       constructors: [],
+      selectedConstructor: "",
+      selectedConstructorResults: [],
       includeRetirements: true,
       includeWetRaces: true,
       includeDryRaces: true,
@@ -45,6 +48,7 @@ export default class StateContainer extends Component {
     this.handleStatsOrCharts = this.handleStatsOrCharts.bind(this);
     this.onTrackWithDriverSelect = this.onTrackWithDriverSelect.bind(this);
     this.onTrackSelect = this.onTrackSelect.bind(this);
+    this.onConstructorSelect = this.onConstructorSelect.bind(this);
   }
 
   componentDidMount() {
@@ -194,6 +198,20 @@ export default class StateContainer extends Component {
     }
   }
 
+  onConstructorSelect(event) {
+    const constructorId = event.target.value;
+    this.setState({ selectedConstructor: constructorId });
+    const url = `https://ergast.com/api/f1/constructors/${constructorId}/results.json?limit=1000`;
+    fetch(url)
+      .then(res => res.json())
+      .then(results => {
+        console.log(results);
+        this.setState({
+          selectedConstructorResults: results.MRData.RaceTable.Races
+        });
+      });
+  }
+
   handleIncludeRetirements() {
     const newIncludeRetirements = !this.state.includeRetirements;
     this.setState({
@@ -288,6 +306,7 @@ export default class StateContainer extends Component {
             handleIncludeWetRaces={this.handleIncludeWetRaces}
             handleIncludeDryRaces={this.handleIncludeDryRaces}
             handleStatsOrCharts={this.handleStatsOrCharts}
+            onConstructorSelect={this.onConstructorSelect}
           />
           <StatsContainer
             driverStatsShown={this.state.driverStatsShown}
@@ -299,6 +318,7 @@ export default class StateContainer extends Component {
             onDriverSelected={this.onDriverSelected}
             tracks={this.state.tracks}
             onTrackSelected={this.onTrackSelect}
+            onConstructorSelect={this.onConstructorSelect}
             constructors={this.state.constructors}
             driver1Code={this.state.driver1Code}
             driver1Name={this.state.driver1Name}
