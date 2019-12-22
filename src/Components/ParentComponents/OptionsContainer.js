@@ -27,7 +27,7 @@ const OptionsContainer = props => {
       <ButtonGroup vertical>
         <TrackSelect
           tracks={props.tracks}
-          onTrackSelected={props.onTrackSelect}
+          onTrackSelected={props.onTrackSelected}
           trackStatsShown={props.trackOptionsShown}
         />
 

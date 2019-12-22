@@ -48,7 +48,7 @@ const StatsContainer = props => {
 
         <TrackSelect
           tracks={props.tracks}
-          onTrackSelected={props.onTrackSelect}
+          onTrackSelected={props.onTrackSelected}
           trackStatsShown={props.trackStatsShown}
         />
 

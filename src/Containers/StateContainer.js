@@ -44,6 +44,7 @@ export default class StateContainer extends Component {
     this.handleIncludeDryRaces = this.handleIncludeDryRaces.bind(this);
     this.handleStatsOrCharts = this.handleStatsOrCharts.bind(this);
     this.onTrackWithDriverSelect = this.onTrackWithDriverSelect.bind(this);
+    this.onTrackSelect = this.onTrackSelect.bind(this);
   }
 
   componentDidMount() {
@@ -150,6 +151,18 @@ export default class StateContainer extends Component {
             driverStatsShown: "flex"
           });
         });
+      });
+  }
+
+  onTrackSelect(event) {
+    const trackId = event.target.value;
+    this.setState({ selectedTrack: trackId });
+    const url = `https://ergast.com/api/f1/circuits/${trackId}/results.json?limit=1000`;
+    fetch(url)
+      .then(res => res.json())
+      .then(results => {
+        console.log(results);
+        this.setState({ selectedTrackResults: results.MRData.RaceTable.Races });
       });
   }
 
