@@ -199,6 +199,7 @@ export default class StateContainer extends Component {
   }
 
   onConstructorSelect(event) {
+    console.log(event);
     const constructorId = event.target.value;
     this.setState({ selectedConstructor: constructorId });
     const url = `https://ergast.com/api/f1/constructors/${constructorId}/results.json?limit=1000`;
