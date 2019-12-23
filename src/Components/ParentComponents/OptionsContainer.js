@@ -31,13 +31,15 @@ const OptionsContainer = props => {
           trackStatsShown={props.trackOptionsShown}
         />
 
-        {/* <ConstructorSelect
+        <ConstructorSelect
           constructorStatsShown={props.constructorOptionsShown}
           constructors={props.constructors}
           onConstructorSelect={props.onConstructorSelect}
-
         />
-        <SeasonSelect seasons={props.seasons} /> */}
+        <SeasonSelect
+          seasons={props.seasons}
+          onSeasonSelect={props.onSeasonSelect}
+        />
       </ButtonGroup>
 
       {/* <h3>Comparison Mode</h3>

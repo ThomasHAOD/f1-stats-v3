@@ -29,6 +29,7 @@ export default class StateContainer extends Component {
       selectedDriver1SeasonsResults: [],
       selectedDriver1TrackResults: [],
       seasons: [],
+      selectedSeason: "",
       tracks: [],
       selectedTrack: "",
       selectedTrackResults: [],
@@ -49,6 +50,7 @@ export default class StateContainer extends Component {
     this.onTrackWithDriverSelect = this.onTrackWithDriverSelect.bind(this);
     this.onTrackSelect = this.onTrackSelect.bind(this);
     this.onConstructorSelect = this.onConstructorSelect.bind(this);
+    this.onSeasonSelect = this.onSeasonSelect.bind(this);
   }
 
   componentDidMount() {
@@ -199,7 +201,6 @@ export default class StateContainer extends Component {
   }
 
   onConstructorSelect(event) {
-    console.log(event);
     const constructorId = event.target.value;
     this.setState({ selectedConstructor: constructorId });
     const url = `https://ergast.com/api/f1/constructors/${constructorId}/results.json?limit=1000`;
@@ -211,6 +212,11 @@ export default class StateContainer extends Component {
           selectedConstructorResults: results.MRData.RaceTable.Races
         });
       });
+  }
+
+  onSeasonSelect(event) {
+    const season = event.target.value;
+    this.setState({ selectedSeason: season });
   }
 
   handleIncludeRetirements() {
@@ -308,6 +314,7 @@ export default class StateContainer extends Component {
             handleIncludeDryRaces={this.handleIncludeDryRaces}
             handleStatsOrCharts={this.handleStatsOrCharts}
             onConstructorSelect={this.onConstructorSelect}
+            onSeasonSelect={this.onSeasonSelect}
           />
           <StatsContainer
             driverStatsShown={this.state.driverStatsShown}

@@ -16,7 +16,7 @@ const SeasonSelect = props => {
   });
 
   function handleChange(event) {
-    props.onSeasonSelected(event.target.value);
+    props.onSeasonSelect(event);
   }
 
   return (
