@@ -13,6 +13,11 @@ $color5: rgba(100, 182, 172, 1);
   z-index: 100;
 }
 
+#credit {
+  grid-row: 7;
+  grid-column: 1 / span 4;
+}
+
 @media only screen and (min-width: 46.875em) {
   .options-container {
     grid-column: 1 / span 4;

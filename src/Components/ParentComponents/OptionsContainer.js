@@ -42,8 +42,16 @@ const OptionsContainer = props => {
         />
       </ButtonGroup>
 
-      {/* <h3>Comparison Mode</h3>
-      <CheckBox /> */}
+      <h3>Comparison Mode</h3>
+      <CheckBox />
+      <br />
+      <br />
+      <p id="credit">
+        By Thomas O'Donnell -{" "}
+        <a href="https://dnbsoftware.com" target="_blank">
+          dnbsoftware.com
+        </a>
+      </p>
     </div>
   );
 };
