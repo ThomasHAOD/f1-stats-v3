@@ -10,16 +10,16 @@ export default class StateContainer extends Component {
 
     this.state = {
       activeStats: "home",
-      driverStatsShown: "none",
-      compareStatsShown: "none",
-      trackStatsShown: "none",
-      constructorStatsShown: "none",
-      loadingSpinnerShown: "none",
-      homeTextShown: "contents",
-      trackOptionsShown: "inline",
-      constructorOptionsShown: "inline",
-      statsShown: "flex",
-      chartsShown: "none",
+      driverStatsShown: false,
+      compareStatsShown: false,
+      trackStatsShown: false,
+      constructorStatsShown: false,
+      loadingSpinnerShown: false,
+      homeTextShown: true,
+      trackOptionsShown: true,
+      constructorOptionsShown: true,
+      statsShown: true,
+      chartsShown: false,
       allRaces: [],
       driver1Name: "",
       driver1Code: "",
@@ -54,7 +54,7 @@ export default class StateContainer extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loadingSpinnerShown: "flex", homeTextShown: "none" });
+    this.setState({ loadingSpinnerShown: true, homeTextShown: false });
 
     const driversUrl = "https://ergast.com/api/f1/current/drivers.json";
     fetch(driversUrl)
@@ -62,8 +62,8 @@ export default class StateContainer extends Component {
       .then(drivers =>
         this.setState({
           drivers: drivers.MRData.DriverTable.Drivers,
-          loadingSpinnerShown: "none",
-          homeTextShown: "contents"
+          loadingSpinnerShown: false,
+          homeTextShown: true
         })
       );
 
@@ -97,7 +97,7 @@ export default class StateContainer extends Component {
   }
 
   onDriverSelected(event) {
-    this.setState({ loadingSpinnerShown: "flex", driverStatsShown: "none" });
+    this.setState({ loadingSpinnerShown: true, driverStatsShown: false });
     const driverId = event;
     const driverUrl = `https://ergast.com/api/f1/drivers/${driverId}/results.json?limit=1000`;
     fetch(driverUrl)
@@ -153,8 +153,8 @@ export default class StateContainer extends Component {
         Promise.all(promises).then(results => {
           this.setState({
             selectedDriver1TrackResults: results,
-            loadingSpinnerShown: "none",
-            driverStatsShown: "flex"
+            loadingSpinnerShown: false,
+            driverStatsShown: true
           });
         });
       });
@@ -244,55 +244,55 @@ export default class StateContainer extends Component {
     if (event.target.value === "driver") {
       this.setState({
         activeStats: "driver",
-        driverStatsShown: "flex",
-        compareStatsShown: "none",
-        trackStatsShown: "none",
-        constructorStatsShown: "none",
-        homeTextShown: "none",
-        trackOptionsShown: "inline",
-        constructorOptionsShown: "inline"
+        driverStatsShown: true,
+        compareStatsShown: false,
+        trackStatsShown: false,
+        constructorStatsShown: false,
+        homeTextShown: false,
+        trackOptionsShown: true,
+        constructorOptionsShown: true
       });
     } else if (event.target.value === "home") {
       this.setState({
         activeStats: "home",
-        driverStatsShown: "none",
-        compareStatsShown: "none",
-        trackStatsShown: "none",
-        constructorStatsShown: "none",
-        homeTextShown: "contents",
-        trackOptionsShown: "inline",
-        constructorOptionsShown: "inline"
+        driverStatsShown: false,
+        compareStatsShown: false,
+        trackStatsShown: false,
+        constructorStatsShown: false,
+        homeTextShown: true,
+        trackOptionsShown: true,
+        constructorOptionsShown: true
       });
     } else if (event.target.value === "track") {
       this.setState({
         activeStats: "track",
-        driverStatsShown: "none",
-        compareStatsShown: "none",
-        trackStatsShown: "flex",
-        constructorStatsShown: "none",
-        homeTextShown: "none",
-        trackOptionsShown: "none",
-        constructorOptionsShown: "inline"
+        driverStatsShown: false,
+        compareStatsShown: false,
+        trackStatsShown: true,
+        constructorStatsShown: false,
+        homeTextShown: false,
+        trackOptionsShown: false,
+        constructorOptionsShown: true
       });
     } else if (event.target.value === "constructor") {
       this.setState({
         activeStats: "constructor",
-        driverStatsShown: "none",
-        compareStatsShown: "none",
-        trackStatsShown: "none",
-        constructorStatsShown: "flex",
-        homeTextShown: "none",
-        trackOptionsShown: "inline",
-        constructorOptionsShown: "none"
+        driverStatsShown: false,
+        compareStatsShown: false,
+        trackStatsShown: false,
+        constructorStatsShown: true,
+        homeTextShown: false,
+        trackOptionsShown: true,
+        constructorOptionsShown: false
       });
     }
   }
 
   handleStatsOrCharts(event) {
     if (event.target.value === "stats") {
-      this.setState({ statsShown: "flex", chartsShown: "none" });
+      this.setState({ statsShown: true, chartsShown: false });
     } else if (event.target.value === "charts") {
-      this.setState({ statsShown: "none", chartsShown: "flex" });
+      this.setState({ statsShown: false, chartsShown: true });
     }
   }
 
