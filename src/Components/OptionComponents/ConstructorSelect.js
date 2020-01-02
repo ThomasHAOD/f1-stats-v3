@@ -19,15 +19,21 @@ const ConstructorSelect = props => {
     props.onConstructorSelect(event);
   }
 
-  return (
-    <Dropdown style={{ display: props.constructorStatsShown }}>
-      <Dropdown.Toggle variant="warning" id="constructor-selector">
-        Select Constructor
-      </Dropdown.Toggle>
+  let constructorSelect = null;
 
-      <Dropdown.Menu>{options}</Dropdown.Menu>
-    </Dropdown>
-  );
+  if (props.constructorStatsShown) {
+    constructorSelect = (
+      <Dropdown style={{ display: props.constructorStatsShown }}>
+        <Dropdown.Toggle variant="warning" id="constructor-selector">
+          Select Constructor
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>{options}</Dropdown.Menu>
+      </Dropdown>
+    );
+  }
+
+  return { constructorSelect };
 };
 
 export default ConstructorSelect;

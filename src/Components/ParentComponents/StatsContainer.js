@@ -15,84 +15,44 @@ const StatsContainer = props => {
   const date = props.nextRace.date;
   const time = props.nextRace.time;
   const dateAndTime = [date, time].join();
-  return (
-    <div className="stats-container">
-      <header className="dropdowns">
-        <Spinner
-          animation="border"
-          variant="info"
-          style={{
-            display: props.loadingSpinnerShown,
-            position: "absolute",
-            left: "50%"
-          }}
-        />
-        <div id="next-race-header" style={{ display: props.homeTextShown }}>
-          <NextRaceData nextRace={props.nextRace} />
-          <h2>Starts in</h2>
-          <h2>
-            <Countdown date={dateAndTime} />
-          </h2>
-        </div>
-        <DriverSelect
-          driverStatsShown={props.driverStatsShown}
-          drivers={props.currentDrivers}
-          onDriverSelected={props.onDriverSelected}
-        />
 
-        <DriverSelect
-          driverStatsShown={props.compareStatsShown}
-          drivers={props.currentDrivers}
-          onDriverSelected={props.onDriverSelected}
-        />
+  let spinner = null;
 
-        <TrackSelect
-          tracks={props.tracks}
-          onTrackSelected={props.onTrackSelected}
-          trackStatsShown={props.trackStatsShown}
-        />
+  if (props.loadingSpinnerShown) {
+    spinner = (
+      <Spinner
+        animation="border"
+        variant="info"
+        style={{
+          display: props.loadingSpinnerShown,
+          position: "absolute",
+          top: "50%",
+          left: "50%"
+        }}
+      />
+    );
+  }
 
-        <ConstructorSelect
-          constructorStatsShown={props.constructorStatsShown}
-          constructors={props.constructors}
-          onConstructorSelect={props.onConstructorSelect}
-        />
-      </header>
-      <div className="general-info">
-        <Spinner
-          animation="border"
-          variant="info"
-          style={{
-            display: props.loadingSpinnerShown,
-            position: "absolute",
-            top: "50%",
-            left: "50%"
-          }}
-        />
+  let nextRaceHeader = null;
 
-        <h2 style={{ display: props.homeTextShown }}>
-          Main Details of Race/Driver/Track/Contructor
+  if (props.homeTextShown) {
+    nextRaceHeader = (
+      <div id="next-race-header" style={{ display: props.homeTextShown }}>
+        <NextRaceData nextRace={props.nextRace} />
+        <h2>Starts in</h2>
+        <h2>
+          <Countdown date={dateAndTime} />
         </h2>
-
-        <DriverMainDetails
-          driver1Name={props.driver1Name}
-          driver1Number={props.driver1Number}
-          driver1Code={props.driver1Code}
-          driver1Nationality={props.driver1Nationality}
-          driverStatsShown={props.driverStatsShown}
-        />
       </div>
-      <main className="graphs-container" style={{ display: props.chartsShown }}>
-        <Spinner
-          animation="border"
-          variant="info"
-          style={{
-            display: props.loadingSpinnerShown,
-            position: "absolute",
-            top: "50%",
-            left: "50%"
-          }}
-        />
+    );
+  }
+
+  let chartsContainer = null;
+
+  if (props.chartsShown) {
+    chartsContainer = (
+      <main className="charts-container">
+        {spinner}
         <DriverChartsContainer
           driverStatsShown={props.driverStatsShown}
           allRaces={props.allRaces}
@@ -100,21 +60,17 @@ const StatsContainer = props => {
           tracks={props.tracks}
         />
 
-        <h1 id="home-image" style={{ display: props.homeTextShown }}>
-          Incredible Predication Charts
-        </h1>
+        <h1>Incredible Predication Charts</h1>
       </main>
+    );
+  }
+
+  let statsContainer = null;
+
+  if (props.statsShown) {
+    statsContainer = (
       <main className="stats-container" style={{ display: props.statsShown }}>
-        <Spinner
-          animation="border"
-          variant="info"
-          style={{
-            display: props.loadingSpinnerShown,
-            position: "absolute",
-            top: "50%",
-            left: "50%"
-          }}
-        />
+        {spinner}
         <DriverStatsContainer
           driverStatsShown={props.driverStatsShown}
           driver1Name={props.driver1Name}
@@ -128,6 +84,50 @@ const StatsContainer = props => {
           Incredible Predication Stats
         </h1>
       </main>
+    );
+  }
+
+  return (
+    <div className="stats-container">
+      <header className="dropdowns">
+        {spinner}
+        {nextRaceHeader}
+        <DriverSelect
+          driverStatsShown={props.driverStatsShown}
+          drivers={props.currentDrivers}
+          onDriverSelected={props.onDriverSelected}
+        />
+        <DriverSelect
+          driverStatsShown={props.compareStatsShown}
+          drivers={props.currentDrivers}
+          onDriverSelected={props.onDriverSelected}
+        />
+        <TrackSelect
+          tracks={props.tracks}
+          onTrackSelected={props.onTrackSelected}
+          trackStatsShown={props.trackStatsShown}
+        />
+        <ConstructorSelect
+          constructorStatsShown={props.constructorStatsShown}
+          constructors={props.constructors}
+          onConstructorSelect={props.onConstructorSelect}
+        />
+      </header>
+      <div className="general-info">
+        {spinner}
+
+        <h2>Main Details of Race/Driver/Track/Contructor</h2>
+
+        <DriverMainDetails
+          driver1Name={props.driver1Name}
+          driver1Number={props.driver1Number}
+          driver1Code={props.driver1Code}
+          driver1Nationality={props.driver1Nationality}
+          driverStatsShown={props.driverStatsShown}
+        />
+      </div>
+      {chartsContainer}
+      {statsContainer}
     </div>
   );
 };

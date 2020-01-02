@@ -19,15 +19,21 @@ const DriverSelect = props => {
     props.onDriverSelected(event.target.value, props.number);
   }
 
-  return (
-    <Dropdown style={{ display: props.driverStatsShown }} className="dropdown">
-      <Dropdown.Toggle variant="danger" id="driver-selector">
-        Select Driver
-      </Dropdown.Toggle>
+  let driverSelect = null;
 
-      <Dropdown.Menu>{options}</Dropdown.Menu>
-    </Dropdown>
-  );
+  if (props.driverStatsShown) {
+    driverSelect = (
+      <Dropdown className="dropdown">
+        <Dropdown.Toggle variant="danger" id="driver-selector">
+          Select Driver
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>{options}</Dropdown.Menu>
+      </Dropdown>
+    );
+  }
+
+  return { driverSelect };
 };
 
 export default DriverSelect;
