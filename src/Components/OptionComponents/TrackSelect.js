@@ -14,26 +14,21 @@ const TrackSelect = props => {
       </Dropdown.Item>
     );
   });
+  console.log(props.trackStatsShown);
 
   function handleChange(event) {
     props.onTrackSelected(event);
   }
 
-  let trackSelect = null;
+  return props.trackStatsShown ? (
+    <Dropdown className="dropdown">
+      <Dropdown.Toggle variant="success" id="track-selector">
+        Select Track
+      </Dropdown.Toggle>
 
-  if (props.trackStatsShown) {
-    trackSelect = (
-      <Dropdown className="dropdown">
-        <Dropdown.Toggle variant="success" id="track-selector">
-          Select Track
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>{options}</Dropdown.Menu>
-      </Dropdown>
-    );
-  }
-
-  return { trackSelect };
+      <Dropdown.Menu>{options}</Dropdown.Menu>
+    </Dropdown>
+  ) : null;
 };
 
 export default TrackSelect;
