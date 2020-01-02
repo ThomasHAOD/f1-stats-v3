@@ -7,6 +7,7 @@ const TrackSelect = props => {
       <Dropdown.Item
         as="button"
         eventKey={index}
+        key={track.circuitId}
         value={track.circuitId}
         onClick={handleChange}
       >
@@ -14,7 +15,6 @@ const TrackSelect = props => {
       </Dropdown.Item>
     );
   });
-  console.log(props.trackStatsShown);
 
   function handleChange(event) {
     props.onTrackSelected(event);

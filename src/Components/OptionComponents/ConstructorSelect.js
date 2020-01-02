@@ -7,6 +7,7 @@ const ConstructorSelect = props => {
       <Dropdown.Item
         as="button"
         eventKey={constructor.constructorId}
+        key={constructor.constructorId}
         value={constructor.constructorId}
         onClick={handleChange}
       >

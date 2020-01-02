@@ -7,6 +7,7 @@ const SeasonSelect = props => {
       <Dropdown.Item
         as="button"
         eventKey={season.season}
+        key={season.season}
         value={season.season}
         onClick={handleChange}
       >

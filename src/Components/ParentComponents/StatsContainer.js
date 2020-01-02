@@ -37,7 +37,7 @@ const StatsContainer = props => {
 
   if (props.homeTextShown) {
     nextRaceHeader = (
-      <div id="next-race-header" style={{ display: props.homeTextShown }}>
+      <div id="next-race-header" style={{ display: "contents" }}>
         <NextRaceData nextRace={props.nextRace} />
         <h2>Starts in</h2>
         <h2>

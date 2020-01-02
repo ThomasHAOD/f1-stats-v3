@@ -7,6 +7,7 @@ const DriverSelect = props => {
       <Dropdown.Item
         as="button"
         eventKey={driver.driverId}
+        key={driver.driverId}
         value={driver.driverId}
         onClick={handleChange}
       >
