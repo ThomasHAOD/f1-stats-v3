@@ -3,13 +3,9 @@ import "./MainDetails.css";
 import Card from "react-bootstrap/Card";
 
 const DriverMainDetails = props => {
-  if (props.driver1Code) {
+  if (props.driver1Code && props.driverStatsShown) {
     return (
-      <Card
-        className="main-details"
-        id="driver-main-details"
-        style={{ display: props.driverStatsShown }}
-      >
+      <Card className="main-details" id="driver-main-details">
         <div style={{ display: "inline" }}>
           <h1>{props.driver1Name}</h1>
 

@@ -6,7 +6,7 @@ import TrackResultsBySeason from "../../Components/ChartsComponents/DriverChartC
 import TrackStats from "../../Components/ChartsComponents/DriverChartComponents/TrackStats";
 
 const DriverChartsContainer = props => {
-  return (
+  return props.driverStatsShown ? (
     <div
       className="charts-container"
       style={{ display: props.driverStatsShown }}
@@ -17,7 +17,7 @@ const DriverChartsContainer = props => {
 
       {/* <TrackStats allRaces={props.allRaces} tracks={props.tracks} /> */}
     </div>
-  );
+  ) : null;
 };
 
 export default DriverChartsContainer;

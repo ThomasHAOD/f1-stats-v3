@@ -3,7 +3,7 @@ import DriverCareerStats from "./DriverStatsComponents/DriverCareerStats";
 import "./DriverStatsContainer.scss";
 
 const DriverStatsContainer = props => {
-  return (
+  return props.driverStatsShown ? (
     <div>
       <div
         className="stats-sub-container"
@@ -16,7 +16,7 @@ const DriverStatsContainer = props => {
         />
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default DriverStatsContainer;
