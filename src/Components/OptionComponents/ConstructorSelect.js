@@ -20,7 +20,7 @@ const ConstructorSelect = props => {
     props.onConstructorSelect(event);
   }
 
-  return props.constructorStatsShown ? (
+  return (
     <Dropdown>
       <Dropdown.Toggle variant="warning" id="constructor-selector">
         Select Constructor
@@ -28,7 +28,7 @@ const ConstructorSelect = props => {
 
       <Dropdown.Menu>{options}</Dropdown.Menu>
     </Dropdown>
-  ) : null;
+  );
 };
 
 export default ConstructorSelect;

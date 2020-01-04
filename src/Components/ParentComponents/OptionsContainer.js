@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import CheckBox from "../OptionComponents/CheckBox";
+import DriverSelect from "../OptionComponents/DriverSelect";
 import TrackSelect from "../OptionComponents/TrackSelect";
 import ConstructorSelect from "../OptionComponents/ConstructorSelect";
 import SeasonSelect from "../OptionComponents/SeasonSelect";
@@ -14,6 +15,28 @@ const OptionsContainer = props => {
         handleStatsShownChange={props.handleStatsShownChange}
         handleStatsOrCharts={props.handleStatsOrCharts}
       />
+
+      <ButtonGroup vertical>
+        <DriverSelect
+          drivers={props.currentDrivers}
+          onDriverSelected={props.onDriverSelected}
+        />
+
+        <TrackSelect
+          tracks={props.tracks}
+          onTrackSelected={props.onTrackSelected}
+        />
+
+        <ConstructorSelect
+          constructors={props.constructors}
+          onConstructorSelect={props.onConstructorSelect}
+        />
+        <SeasonSelect
+          seasons={props.seasons}
+          onSeasonSelect={props.onSeasonSelect}
+        />
+      </ButtonGroup>
+
       <h3>Include Retirements</h3>
       <CheckBox handleChange={props.handleIncludeRetirements} />
       <br />
@@ -23,24 +46,6 @@ const OptionsContainer = props => {
       <h3>Include Dry Races</h3>
       <CheckBox handleChange={props.handleIncludeDryRaces} />
       <br />
-
-      <ButtonGroup vertical>
-        <TrackSelect
-          tracks={props.tracks}
-          onTrackSelected={props.onTrackSelected}
-          trackStatsShown={props.trackOptionsShown}
-        />
-
-        <ConstructorSelect
-          constructorStatsShown={props.constructorOptionsShown}
-          constructors={props.constructors}
-          onConstructorSelect={props.onConstructorSelect}
-        />
-        <SeasonSelect
-          seasons={props.seasons}
-          onSeasonSelect={props.onSeasonSelect}
-        />
-      </ButtonGroup>
 
       <h3>Comparison Mode</h3>
       <CheckBox />

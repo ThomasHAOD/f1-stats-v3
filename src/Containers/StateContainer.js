@@ -305,6 +305,8 @@ export default class StateContainer extends Component {
             handleStatsShownChange={this.handleStatsShownChange}
             trackOptionsShown={this.state.trackOptionsShown}
             constructorOptionsShown={this.state.constructorOptionsShown}
+            currentDrivers={this.state.drivers}
+            onDriverSelected={this.onDriverSelected}
             tracks={this.state.tracks}
             onTrackSelected={this.onTrackSelect}
             constructors={this.state.constructors}

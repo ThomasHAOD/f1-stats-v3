@@ -20,7 +20,7 @@ const TrackSelect = props => {
     props.onTrackSelected(event);
   }
 
-  return props.trackStatsShown ? (
+  return (
     <Dropdown className="dropdown">
       <Dropdown.Toggle variant="success" id="track-selector">
         Select Track
@@ -28,7 +28,7 @@ const TrackSelect = props => {
 
       <Dropdown.Menu>{options}</Dropdown.Menu>
     </Dropdown>
-  ) : null;
+  );
 };
 
 export default TrackSelect;

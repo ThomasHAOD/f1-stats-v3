@@ -92,26 +92,6 @@ const StatsContainer = props => {
       <header className="dropdowns">
         {spinner}
         {nextRaceHeader}
-        <DriverSelect
-          driverStatsShown={props.driverStatsShown}
-          drivers={props.currentDrivers}
-          onDriverSelected={props.onDriverSelected}
-        />
-        <DriverSelect
-          driverStatsShown={props.compareStatsShown}
-          drivers={props.currentDrivers}
-          onDriverSelected={props.onDriverSelected}
-        />
-        <TrackSelect
-          tracks={props.tracks}
-          onTrackSelected={props.onTrackSelected}
-          trackStatsShown={props.trackStatsShown}
-        />
-        <ConstructorSelect
-          constructorStatsShown={props.constructorStatsShown}
-          constructors={props.constructors}
-          onConstructorSelect={props.onConstructorSelect}
-        />
       </header>
       <div className="general-info">
         {spinner}
